@@ -2,5 +2,12 @@
 
 [ext_resource type="Script" uid="uid://u2xn28py5abe" path="res://scripts/props/gate.gd" id="1_nm6xp"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_nm6xp"]
+size = Vector3(8, 8, 2)
+
 [node name="Gate" type="Node3D" unique_id=1413678660]
 script = ExtResource("1_nm6xp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=427680726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("BoxMesh_nm6xp")
