@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://drrs8ydypxlhr"]
 
 [ext_resource type="PackedScene" uid="uid://c7mv3vanmncbt" path="res://assets/models/Raticus.glb" id="1_ehad1"]
+[ext_resource type="Script" uid="uid://c8atbqvi11iwc" path="res://scripts/actors/ratmouse.gd" id="1_jxxoo"]
 
 [sub_resource type="Animation" id="Animation_ehad1"]
 resource_name = "Movement Anim"
@@ -89,6 +90,7 @@ _data = {
 }
 
 [node name="Ratmouse" type="Node3D" unique_id=512260425]
+script = ExtResource("1_jxxoo")
 
 [node name="Raticus" parent="." unique_id=1055582564 instance=ExtResource("1_ehad1")]
 transform = Transform3D(1, 0, 0, 0, 0.363616, 0, 0, 0, 1, 0.041192055, -2.3841858e-07, -0.118888855)

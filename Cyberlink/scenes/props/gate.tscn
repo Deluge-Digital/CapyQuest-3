@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqyin0k0d4s76"]
+
+[ext_resource type="Script" uid="uid://u2xn28py5abe" path="res://scripts/props/gate.gd" id="1_nm6xp"]
+
+[node name="Gate" type="Node3D" unique_id=1413678660]
+script = ExtResource("1_nm6xp")
