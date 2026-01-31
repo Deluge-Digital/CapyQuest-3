@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ceulqakrsns8h" path="res://scripts/managers/game_manager.gd" id="1_glms7"]
 [ext_resource type="Script" uid="uid://bj6bhnbd5bm0o" path="res://scripts/managers/level_manager.gd" id="2_oo155"]
 [ext_resource type="Script" uid="uid://mj651yhan7n4" path="res://scripts/ui/pop_ups/popup_queue.gd" id="2_udu3i"]
+[ext_resource type="Script" uid="uid://cv8t3c0ryu0k8" path="res://scripts/systems/camera_control.gd" id="3_eaq8r"]
 [ext_resource type="PackedScene" uid="uid://cxut7p7twsnes" path="res://scenes/ui/pop_ups/blocker.tscn" id="4_oo155"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_oo155"]
@@ -18,20 +19,32 @@ script = ExtResource("1_glms7")
 scene_root = NodePath("SceneRoot")
 popup_queue = NodePath("PopupQueue")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1875703322]
+[node name="DUMMY LIGHT" type="DirectionalLight3D" parent="." unique_id=1561516524]
+transform = Transform3D(1, 0, 0, 0, 0.31611267, -0.94872165, 0, 0.94872165, 0.31611267, 0, 3.994194, 0)
+
+[node name="DUMMY CUBE" type="MeshInstance3D" parent="." unique_id=1875703322]
 mesh = SubResource("BoxMesh_oo155")
 
-[node name="LevelManager" type="Node3D" parent="." unique_id=1640850077]
+[node name="DUMMY CUBE2" type="MeshInstance3D" parent="." unique_id=941434911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4191914, 0)
+mesh = SubResource("BoxMesh_oo155")
+
+[node name="LevelManager" type="Node3D" parent="." unique_id=1640850077 node_paths=PackedStringArray("camera")]
 script = ExtResource("2_oo155")
+camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="LevelManager" unique_id=21155025]
 transform = Transform3D(0.7071068, -0.5, 0.5, 0, 0.7071068, 0.70710677, -0.7071068, -0.5, 0.5, 5, 5, 5)
 current = true
+script = ExtResource("3_eaq8r")
 
 [node name="SceneRoot" type="Control" parent="." unique_id=795423356]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PopupQueue" type="Control" parent="." unique_id=448148160 node_paths=PackedStringArray("_blocker")]
 top_level = true

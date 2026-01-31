@@ -1,4 +1,4 @@
-extends State
+extends BasePlayState
 class_name WaitingState
 
 const STATE_NAME : String = "WAITING_STATE"
