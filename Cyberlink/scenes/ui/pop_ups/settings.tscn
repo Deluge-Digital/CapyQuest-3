@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://b38tgajokhp56"]
 
-[ext_resource type="Script" uid="uid://bhuhj5ccn7dhe" path="res://scripts/popups/settings.gd" id="1_5p8wc"]
-
 [node name="Settings" type="Control" unique_id=1499328830]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_5p8wc")

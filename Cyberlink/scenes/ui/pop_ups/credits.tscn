@@ -1,8 +1,5 @@
 [gd_scene format=3 uid="uid://dhqib8ivegwtb"]
 
-[ext_resource type="Script" uid="uid://bs3ickrqsyojm" path="res://scripts/popups/credits.gd" id="1_u4j4d"]
-
 [node name="Credits" type="Control" unique_id=1238414769]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_u4j4d")

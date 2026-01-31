@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://biqgk7cyeufh0"]
+
+[ext_resource type="Script" uid="uid://dcdlm0l4ikfq6" path="res://scripts/ui/pop_ups/generic_popup.gd" id="1_xhbn7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ffkck"]
+font_size = 32
+
+[node name="GenericPopup" type="Control" unique_id=1950597580]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhbn7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2050571162]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.35
+anchor_right = 0.7
+anchor_bottom = 0.65
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.39215687, 0.2901961, 0.19215687, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1546713861]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -11.5
+offset_right = 57.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Generic Popup"
+label_settings = SubResource("LabelSettings_ffkck")
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1873158129]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 0.1
+grow_horizontal = 0
+text = "X"

@@ -7,6 +7,9 @@ var main_menu_state : MainMenuState
 
 var state_machine : StateMachine
 
+@export var level_manager : LevelManager
+@export var popup_queue : PopupQueue
+
 func _ready() -> void:
 	# Check to see if the current scene is the default. If so, kill it.
 	# This script is attached to an autoload, so it can't also be the initial
@@ -34,3 +37,35 @@ func _setup_state_machine() -> void:
 	pause_state = PauseState.new(state_machine)
 	
 	state_machine.transition_to(main_menu_state)
+	
+func get_current_state() -> State:
+	return state_machine.current_state
+	
+func clear_popup_queue() -> void:
+	popup_queue.clear_queue()
+
+## Requests by other systems. Returns false if invalid transition
+func request_play() -> bool:
+	var success : bool = state_machine.transition_to(play_state)
+	return success
+
+func request_pause() -> bool:
+	var success : bool = state_machine.transition_to(pause_state)
+	return success
+
+func request_unpause() -> bool:
+	var success : bool = state_machine.transition_to(play_state)
+	return success
+
+## Waits one frame to let allow signals to finalize.
+func change_scene_deferred(scene : PackedScene) -> void:
+	await get_tree().process_frame
+	change_scene_sync(scene)
+
+## Clears all scenes from the root and calls the requested scene afterwards
+func change_scene_sync(scene : PackedScene) -> void:
+	for child in level_manager.get_children():
+		child.queue_free()
+	
+	var new_scene = scene.instantiate()
+	level_manager.add_child(new_scene)
