@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dnu6tlcyuflnw"]
 
+[ext_resource type="Script" uid="uid://34lm3amn8vka" path="res://scripts/ui/pipestrails.gd" id="1_1iqp7"]
+
 [node name="Background" type="Control" unique_id=742140058]
 layout_mode = 3
 anchors_preset = 15
@@ -9,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=140424115]
+[node name="Blue" type="ColorRect" parent="." unique_id=140424115]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,3 +19,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.016999984, 0.51, 1)
+
+[node name="PipesTrails" type="Control" parent="." unique_id=554403757]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1iqp7")

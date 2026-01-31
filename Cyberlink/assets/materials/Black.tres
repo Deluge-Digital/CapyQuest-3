@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c0f65wcc36mxt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ru2nh"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.05
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "Black"
+next_pass = SubResource("StandardMaterial3D_ru2nh")
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.09985284, 0.09985284, 0.09985284, 1)
+roughness = 0.25
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.05
