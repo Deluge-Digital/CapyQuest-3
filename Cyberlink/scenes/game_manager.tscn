@@ -5,7 +5,9 @@
 [ext_resource type="Script" uid="uid://mj651yhan7n4" path="res://scripts/ui/pop_ups/popup_queue.gd" id="2_udu3i"]
 [ext_resource type="PackedScene" uid="uid://cxut7p7twsnes" path="res://scenes/ui/pop_ups/blocker.tscn" id="4_oo155"]
 
-[node name="GameManager" type="Control" unique_id=1981080538 node_paths=PackedStringArray("level_manager", "popup_queue")]
+[sub_resource type="BoxMesh" id="BoxMesh_oo155"]
+
+[node name="GameManager" type="Control" unique_id=1981080538 node_paths=PackedStringArray("scene_root", "popup_queue")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,15 +15,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_glms7")
-level_manager = NodePath("LevelManager")
+scene_root = NodePath("SceneRoot")
 popup_queue = NodePath("PopupQueue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1875703322]
+mesh = SubResource("BoxMesh_oo155")
 
 [node name="LevelManager" type="Node3D" parent="." unique_id=1640850077]
 script = ExtResource("2_oo155")
 
 [node name="Camera3D" type="Camera3D" parent="LevelManager" unique_id=21155025]
-transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 5, 5, 5)
+transform = Transform3D(0.7071068, -0.5, 0.5, 0, 0.7071068, 0.70710677, -0.7071068, -0.5, 0.5, 5, 5, 5)
 current = true
+
+[node name="SceneRoot" type="Control" parent="." unique_id=795423356]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="PopupQueue" type="Control" parent="." unique_id=448148160 node_paths=PackedStringArray("_blocker")]
 top_level = true

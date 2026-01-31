@@ -42,7 +42,7 @@ grow_vertical = 2
 text = "Generic Popup"
 label_settings = SubResource("LabelSettings_ffkck")
 
-[node name="Button" type="Button" parent="ColorRect" unique_id=1873158129]
+[node name="Exit" type="Button" parent="ColorRect" unique_id=1873158129]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.9
@@ -50,3 +50,5 @@ anchor_right = 1.0
 anchor_bottom = 0.1
 grow_horizontal = 0
 text = "X"
+
+[connection signal="pressed" from="ColorRect/Exit" to="." method="_on_exit_button_pressed"]

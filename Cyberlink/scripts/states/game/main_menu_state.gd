@@ -2,7 +2,7 @@ extends State
 class_name MainMenuState
 
 const STATE_NAME : String = "MAIN_MENU_STATE"
-const MAIN_MENU_SCENE : PackedScene = preload("res://scenes/ui/screens/main_menu.tscn")
+const MAIN_MENU_SCENE : PackedScene = preload("res://scenes/ui/main_menu.tscn")
 
 signal signal_main_menu
 

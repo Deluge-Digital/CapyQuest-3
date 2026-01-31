@@ -7,7 +7,7 @@ var main_menu_state : MainMenuState
 
 var state_machine : StateMachine
 
-@export var level_manager : LevelManager
+@export var scene_root : Control
 @export var popup_queue : PopupQueue
 
 func _ready() -> void:
@@ -64,8 +64,8 @@ func change_scene_deferred(scene : PackedScene) -> void:
 
 ## Clears all scenes from the root and calls the requested scene afterwards
 func change_scene_sync(scene : PackedScene) -> void:
-	for child in level_manager.get_children():
+	for child in scene_root.get_children():
 		child.queue_free()
 	
 	var new_scene = scene.instantiate()
-	level_manager.add_child(new_scene)
+	scene_root.add_child(new_scene)
