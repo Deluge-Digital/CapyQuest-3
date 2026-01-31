@@ -20,6 +20,13 @@ func request_pose(target_pos : Vector3 = Vector3(9999,9999,9999), target_rot_deg
 	
 	_interrupt_current_tween()
 	
+	print(
+		"Camera movement from pos:", global_position,
+		"\n                from rot:", global_rotation_degrees,
+		"\n                to pos:", target_pos,
+		"\n                to rot:", target_rot_deg
+	)
+	
 	var from_q : Quaternion = global_transform.basis.get_rotation_quaternion()
 	var to_q : Quaternion = Quaternion.from_euler(target_rot_deg * PI / 180.0)
 	
