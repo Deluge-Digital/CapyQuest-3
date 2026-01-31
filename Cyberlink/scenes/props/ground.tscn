@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://cxyk0cvaas46b"]
 
+[ext_resource type="Script" uid="uid://cbxsykoebuucj" path="res://scripts/props/ground.gd" id="1_swbi6"]
+
 [node name="Ground" type="Node3D" unique_id=140565938]
+script = ExtResource("1_swbi6")
