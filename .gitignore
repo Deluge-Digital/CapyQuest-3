@@ -1,11 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
-.nomedia
 
 # Godot-specific ignores
 .import/
 export.cfg
-export_credentials.cfg
+export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -14,3 +13,10 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Ignore save data
+save_file.json
+
+# Ignore Releases
+Releases/
+/android/
