@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dj4scpgbrano0"]
+
+[resource]
+resource_name = "Block"
+transparency = 4
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.90588236, 0.90588236, 0.90588236, 0.15686275)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
