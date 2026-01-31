@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://buf8dashuwsla"]
+
+[ext_resource type="Script" uid="uid://c7pueinw3u525" path="res://scripts/popups/title.gd" id="1_4ignj"]
+
+[node name="Title" type="Control" unique_id=2116475503]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4ignj")
