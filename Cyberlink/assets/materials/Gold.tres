@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://h4ndhapcdmxt"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dcoqjl0q8pdv8"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wi4nf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rarw1"]
 render_priority = 1
 transparency = 1
 shading_mode = 0
@@ -13,12 +13,14 @@ stencil_compare = 5
 metadata/_stencil_owned = true
 
 [resource]
-resource_name = "Nose"
-next_pass = SubResource("StandardMaterial3D_wi4nf")
+resource_name = "Gold"
+next_pass = SubResource("StandardMaterial3D_rarw1")
 cull_mode = 2
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_color = Color(0.90650964, 0.5875195, 0.21124893, 1)
+metallic = 0.5
+roughness = 0.5
 stencil_mode = 1
 stencil_flags = 2
 stencil_outline_thickness = 0.05
