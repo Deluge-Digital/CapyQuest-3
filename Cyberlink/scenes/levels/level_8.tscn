@@ -165,6 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 36)
 
 [node name="Ground48" parent="Node3D" unique_id=959865608 instance=ExtResource("2_h6r4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 44)
+tile_color = 1
 
 [node name="Ground49" parent="Node3D" unique_id=1404057740 instance=ExtResource("2_h6r4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 52)
@@ -215,16 +216,66 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 52)
 [node name="Ground64" parent="Node3D" unique_id=1398570783 instance=ExtResource("2_h6r4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 60)
 
+[node name="Ground65" parent="Node3D" unique_id=742128623 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 68)
+
+[node name="Ground66" parent="Node3D" unique_id=433222609 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 68)
+
+[node name="Ground67" parent="Node3D" unique_id=1886531257 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 68)
+tile_color = 4
+
+[node name="Ground68" parent="Node3D" unique_id=340802129 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 68)
+
+[node name="Ground69" parent="Node3D" unique_id=1594088034 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 68)
+
+[node name="Ground70" parent="Node3D" unique_id=548826750 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 68)
+
+[node name="Ground71" parent="Node3D" unique_id=640596522 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 68)
+
+[node name="Ground72" parent="Node3D" unique_id=119344352 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 68)
+
+[node name="Ground73" parent="Node3D" unique_id=1788555053 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 4)
+
+[node name="Ground74" parent="Node3D" unique_id=1436157275 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 12)
+
+[node name="Ground75" parent="Node3D" unique_id=2060518309 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 20)
+
+[node name="Ground76" parent="Node3D" unique_id=576578837 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 28)
+
+[node name="Ground77" parent="Node3D" unique_id=324547288 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 36)
+
+[node name="Ground78" parent="Node3D" unique_id=1358853290 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 44)
+
+[node name="Ground79" parent="Node3D" unique_id=267104701 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 52)
+
+[node name="Ground80" parent="Node3D" unique_id=706980373 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 60)
+
+[node name="Ground81" parent="Node3D" unique_id=1920336634 instance=ExtResource("2_h6r4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 68)
+
 [node name="Wall2" parent="Node3D" unique_id=1969168032 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 12)
 
 [node name="Wall3" parent="Node3D" unique_id=1077380698 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 28)
-tile_color = 1
 
 [node name="Wall5" parent="Node3D" unique_id=1892356381 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 28)
-tile_color = 1
 
 [node name="Wall6" parent="Node3D" unique_id=766251680 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 28)
@@ -236,14 +287,25 @@ tile_color = 4
 
 [node name="Wall8" parent="Node3D" unique_id=2080715510 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
-tile_color = 4
 
 [node name="Wall9" parent="Node3D" unique_id=1102388019 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
-tile_color = 4
 
 [node name="Wall7" parent="Node3D" unique_id=926102366 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 52)
+tile_color = 5
+
+[node name="Wall31" parent="Node3D" unique_id=1950154922 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 60)
+tile_color = 4
+
+[node name="Wall32" parent="Node3D" unique_id=185650055 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 60)
+tile_color = 5
+
+[node name="Wall33" parent="Node3D" unique_id=704516918 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 60)
+tile_color = 4
 
 [node name="Wall10" parent="Node3D" unique_id=1216799720 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 12)
@@ -256,30 +318,46 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 20)
 
 [node name="Wall13" parent="Node3D" unique_id=1831181185 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 44)
+tile_color = 4
 
 [node name="Wall21" parent="Node3D" unique_id=1444132698 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 52)
+tile_color = 4
 
 [node name="Wall17" parent="Node3D" unique_id=2093835249 instance=ExtResource("3_w2i51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 4)
 tile_color = 5
 
 [node name="Wall15" parent="Node3D" unique_id=414209340 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 12)
-tile_color = 1
 
 [node name="Wall22" parent="Node3D" unique_id=1313885482 instance=ExtResource("3_w2i51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 12)
-tile_color = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 20)
+
+[node name="Wall35" parent="Node3D" unique_id=309532218 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 12)
 
 [node name="Wall18" parent="Node3D" unique_id=1741015703 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 28)
 
 [node name="Wall23" parent="Node3D" unique_id=745058845 instance=ExtResource("3_w2i51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 36)
+
+[node name="Wall36" parent="Node3D" unique_id=2007820649 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 44)
+tile_color = 1
+
+[node name="Wall38" parent="Node3D" unique_id=997020825 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 52)
+tile_color = 1
+
+[node name="Wall37" parent="Node3D" unique_id=1417292873 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 52)
+tile_color = 4
 
 [node name="Wall24" parent="Node3D" unique_id=1577196150 instance=ExtResource("3_w2i51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 36)
+tile_color = 5
 
 [node name="Wall26" parent="Node3D" unique_id=1268944405 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 28)
@@ -288,30 +366,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 28)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 12)
 
 [node name="Wall19" parent="Node3D" unique_id=463567052 instance=ExtResource("3_w2i51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 60)
+
+[node name="Wall34" parent="Node3D" unique_id=856342251 instance=ExtResource("3_w2i51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 68)
 
 [node name="Wall27" parent="Node3D" unique_id=1889280144 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 52)
 
 [node name="Wall30" parent="Node3D" unique_id=556358784 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 44)
-tile_color = 1
 
 [node name="Wall29" parent="Node3D" unique_id=1003081768 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 0, 36)
-tile_color = 4
 
 [node name="Wall28" parent="Node3D" unique_id=291219104 instance=ExtResource("3_w2i51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, 52)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
 
 [node name="Wall25" parent="Node3D" unique_id=1859974614 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
 
 [node name="Wall20" parent="Node3D" unique_id=1801347425 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 44)
+tile_color = 4
 
 [node name="Wall14" parent="Node3D" unique_id=1380821167 instance=ExtResource("3_w2i51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 44)
+tile_color = 5
 
 [node name="Ratmouse" parent="." unique_id=512260425 instance=ExtResource("4_xsrpe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 52)
@@ -323,12 +404,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 20)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 52)
 
 [node name="Keycard" parent="." unique_id=809400010 instance=ExtResource("7_v7ucw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 36)
 
 [node name="Locked Door" type="Node3D" parent="." unique_id=70839500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 3.2, 28)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Locked Door" unique_id=994667806]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -8)
 mesh = SubResource("CapsuleMesh_ugcn1")
 surface_material_override/0 = SubResource("StandardMaterial3D_pimnq")
