@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://dfrpax2v0ay0y"]
 
+[ext_resource type="Script" uid="uid://bkexajysrkj77" path="res://scripts/props/wall.gd" id="1_viio0"]
+
 [node name="Wall" type="Node3D" unique_id=2024316484]
+script = ExtResource("1_viio0")
