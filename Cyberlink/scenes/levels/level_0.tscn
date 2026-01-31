@@ -3,13 +3,10 @@
 [ext_resource type="Script" uid="uid://bbthto03eveyx" path="res://scripts/levels/level_0.gd" id="1_bw3rj"]
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="1_sxr8l"]
 
-[node name="Level0" type="Node3D" unique_id=996714162 node_paths=PackedStringArray("ground")]
+[node name="Level0" type="Node3D" unique_id=996714162]
 script = ExtResource("1_bw3rj")
 start_pos_x = 1
 start_pos_z = 1
-ground = NodePath("Ground")
 
 [node name="Ground" parent="." unique_id=140565938 instance=ExtResource("1_sxr8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
-board_size_x = 6
-board_size_z = 6
