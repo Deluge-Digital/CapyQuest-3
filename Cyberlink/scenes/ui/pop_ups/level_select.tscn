@@ -1,5 +1,75 @@
-[gd_scene format=3 uid="uid://byqyg42npm1ei"]
+[gd_scene format=3 uid="uid://hcoi8dxa5rd1"]
 
 [node name="Levels" type="Control" unique_id=206903053]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1159137217]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=873381284]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 4
+
+[node name="L1" type="Button" parent="PanelContainer/GridContainer" unique_id=944995776]
+layout_mode = 2
+text = "Level 1"
+
+[node name="L2" type="Button" parent="PanelContainer/GridContainer" unique_id=1014237412]
+layout_mode = 2
+text = "Level 2"
+
+[node name="L3" type="Button" parent="PanelContainer/GridContainer" unique_id=596532097]
+layout_mode = 2
+text = "Level 3"
+
+[node name="L4" type="Button" parent="PanelContainer/GridContainer" unique_id=346051175]
+layout_mode = 2
+text = "Level 4"
+
+[node name="L5" type="Button" parent="PanelContainer/GridContainer" unique_id=744716227]
+layout_mode = 2
+text = "Level 5"
+
+[node name="L6" type="Button" parent="PanelContainer/GridContainer" unique_id=1448432836]
+layout_mode = 2
+text = "Level 6"
+
+[node name="L7" type="Button" parent="PanelContainer/GridContainer" unique_id=1086379472]
+layout_mode = 2
+text = "Level 7"
+
+[node name="L8" type="Button" parent="PanelContainer/GridContainer" unique_id=869440942]
+layout_mode = 2
+text = "Level 8"
+
+[node name="L9" type="Button" parent="PanelContainer/GridContainer" unique_id=2019831846]
+layout_mode = 2
+text = "Level 9"
+
+[node name="L10" type="Button" parent="PanelContainer/GridContainer" unique_id=1609245131]
+layout_mode = 2
+text = "Level 10"
+
+[node name="L11" type="Button" parent="PanelContainer/GridContainer" unique_id=142604382]
+layout_mode = 2
+text = "Level 11"
+
+[node name="L12" type="Button" parent="PanelContainer/GridContainer" unique_id=401148516]
+layout_mode = 2
+text = "Level 12"
