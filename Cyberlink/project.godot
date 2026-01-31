@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Cyberlink"
+run/main_scene="uid://b2ty0si3eew76"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*uid://6higs1kg4s34"
+GameManager="*res://scripts/managers/game_manager.gd"
+PlayerData="*res://scripts/systems/player_data.gd"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "green",
+"res://scenes/": "yellow",
+"res://scripts/": "orange"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
