@@ -44,6 +44,39 @@ tracks/2/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, 3.1415927), Vector3(0, 0, -1.7749999)]
 }
 
+[sub_resource type="Animation" id="Animation_4kme6"]
+length = 2.0
+loop_mode = 1
+step = 0.0338
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Raticus:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.1, 0.9, 1.1), Vector3(0.9, 1.1, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_ne848"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Raticus:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4934379, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.25, 0.75, 1.25), Vector3(1.25, 0.75, 1.25), Vector3(0.75, 1.25, 0.75), Vector3(1.1, 0.9, 1.1)]
+}
+
 [sub_resource type="Animation" id="Animation_jxxoo"]
 length = 0.001
 tracks/0/type = "value"
@@ -56,7 +89,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1, 0.363616, 1)]
+"values": [Vector3(1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -68,7 +101,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.041192055, -2.3841858e-07, -0.118888855)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -83,17 +116,35 @@ tracks/2/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_k70wj"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Raticus:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.25, 0.75, 0.75), Vector3(0.75, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4kme6"]
 _data = {
-&"Movement Anim": SubResource("Animation_ehad1"),
-&"RESET": SubResource("Animation_jxxoo")
+&"Backflip": SubResource("Animation_ehad1"),
+&"Idle": SubResource("Animation_4kme6"),
+&"Jump": SubResource("Animation_ne848"),
+&"RESET": SubResource("Animation_jxxoo"),
+&"Walk": SubResource("Animation_k70wj")
 }
 
 [node name="Ratmouse" type="Node3D" unique_id=512260425]
 script = ExtResource("1_jxxoo")
 
 [node name="Raticus" parent="." unique_id=1055582564 instance=ExtResource("1_ehad1")]
-transform = Transform3D(1, 0, 0, 0, 0.363616, 0, 0, 0, 1, 0.041192055, -2.3841858e-07, -0.118888855)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1207772204]
 libraries/ = SubResource("AnimationLibrary_4kme6")
