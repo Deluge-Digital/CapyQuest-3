@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cllw3lm1t8syq"]
 
+[ext_resource type="Script" uid="uid://ceulqakrsns8h" path="res://scripts/managers/game_manager.gd" id="1_hwd4i"]
+
 [node name="GameManager" type="Control" unique_id=1981080538]
 layout_mode = 3
 anchors_preset = 15
@@ -7,11 +9,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hwd4i")
 
 [node name="MainStage" type="Node3D" parent="." unique_id=1640850077]
 
 [node name="Camera3D" type="Camera3D" parent="MainStage" unique_id=21155025]
 transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 5, 5, 5)
+current = true
 
 [node name="Popup" type="Control" parent="." unique_id=448148160]
 top_level = true

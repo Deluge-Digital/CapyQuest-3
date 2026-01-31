@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Cyberlink"
-run/main_scene="uid://cllw3lm1t8syq"
+run/main_scene="uid://b2ty0si3eew76"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://cllw3lm1t8syq"
 
 [file_customization]
 
