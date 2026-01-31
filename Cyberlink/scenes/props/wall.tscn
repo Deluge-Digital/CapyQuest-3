@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dfrpax2v0ay0y"]
 
 [ext_resource type="Script" uid="uid://bkexajysrkj77" path="res://scripts/props/wall.gd" id="1_viio0"]
+[ext_resource type="Material" uid="uid://c0f65wcc36mxt" path="res://assets/materials/Black.tres" id="2_e6dnx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_viio0"]
+resource_local_to_scene = true
+material = ExtResource("2_e6dnx")
 size = Vector3(8, 8, 8)
 
 [node name="Wall" type="Node3D" unique_id=2024316484]

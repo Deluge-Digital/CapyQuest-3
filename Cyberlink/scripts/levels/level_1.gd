@@ -6,10 +6,14 @@ extends BaseLevel
 func _ready() -> void:
 	pass
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_accept"):
+func wincheck():
+	if $Ratmouse.position == $Cheese.position:
 		$Ratmouse/AnimationPlayer.play("Movement Anim")
-		$Camera3D/AnimatedSprite3D.play("default_2")
+		print("youwin!!")
+
+func _input(event: InputEvent) -> void:
+	print(str($Ratmouse/Raticus.position))
+	wincheck()
 	
 
 
