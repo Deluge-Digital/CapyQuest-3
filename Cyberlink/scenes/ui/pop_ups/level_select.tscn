@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://qis5tgnaxcq8" path="res://assets/UI/Sci-Fi Menu.tres" id="1_ndgdd"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_1s7e3"]
 [ext_resource type="Script" uid="uid://cxn4l3jtwy1ua" path="res://scripts/ui/pop_ups/level_select.gd" id="2_wrjml"]
-[ext_resource type="Script" path="res://scripts/ui/buttons.gd" id="3_77c0q"]
+[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="3_77c0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s7e3"]
 bg_color = Color(0.6, 0.6, 0.6, 0.19607843)
@@ -83,7 +83,7 @@ _data = {
 &"menu_on": SubResource("Animation_0c7r2")
 }
 
-[node name="Levels" type="Control" unique_id=206903053 node_paths=PackedStringArray("grid")]
+[node name="Levels" type="Control" unique_id=206903053 node_paths=PackedStringArray("grid", "animator")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,6 +93,7 @@ grow_vertical = 2
 theme = ExtResource("1_ndgdd")
 script = ExtResource("2_wrjml")
 grid = NodePath("MarginContainer/PanelContainer/GridContainer")
+animator = NodePath("AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1669958321]
 layout_mode = 1

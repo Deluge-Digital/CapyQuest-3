@@ -45,7 +45,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Title:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +61,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Title:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,8 +84,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 8.324951
-offset_bottom = -0.0024414063
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_fe2o3")
@@ -97,9 +95,12 @@ settings = ExtResource("4_btxxm")
 credits = ExtResource("5_wb0q5")
 
 [node name="Title" type="Control" parent="." unique_id=608700614]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Title" unique_id=728682949]
 layout_mode = 0

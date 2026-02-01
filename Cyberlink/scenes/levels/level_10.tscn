@@ -95,7 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 44)
 
 [node name="Ground28" parent="." unique_id=977808492 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 44)
-tile_color = 4
 
 [node name="Ground29" parent="." unique_id=1512016625 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 44)
@@ -129,7 +128,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 52)
 
 [node name="Ground39" parent="." unique_id=627322605 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 52)
-tile_color = 4
 
 [node name="Ground40" parent="." unique_id=876515300 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 52)
@@ -170,7 +168,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 60)
 
 [node name="Ground52" parent="." unique_id=984112217 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 60)
-tile_color = 4
 
 [node name="Ground53" parent="." unique_id=1262955614 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 60)
@@ -216,7 +213,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 68)
 
 [node name="Ground67" parent="." unique_id=1886531257 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 68)
-tile_color = 4
 
 [node name="Ground68" parent="." unique_id=340802129 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 68)
@@ -268,7 +264,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 76)
 
 [node name="Ground84" parent="." unique_id=1443533953 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 76)
-tile_color = 4
 
 [node name="Ground85" parent="." unique_id=1261710688 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 76)
