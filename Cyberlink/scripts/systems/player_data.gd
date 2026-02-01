@@ -1,16 +1,9 @@
 extends Node
 
-var player_score : float = 0.0
+var player_color : color_enum.TileColor = color_enum.TileColor.NONE
 
-func set_score(score : float) -> void:
-	player_score = score
-	
-func add_score(score : float) -> void:
-	player_score += score
-	
-func get_score() -> float:
-	return player_score
-	
-func reset_score() -> void:
-	player_score = 0.0
-	
+func get_player_color() -> color_enum.TileColor:
+	return player_color
+
+func set_player_color() -> void:
+	pass

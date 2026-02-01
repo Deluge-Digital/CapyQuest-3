@@ -2,19 +2,22 @@
 
 [ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_jo8l1"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_6hj5w"]
+[ext_resource type="Script" uid="uid://ccuala5lgmupt" path="res://scripts/ui/hud.gd" id="2_t5gps"]
 [ext_resource type="Texture2D" uid="uid://p15xefxgoa2n" path="res://assets/UI/UW.png" id="3_mqv4c"]
 [ext_resource type="Texture2D" uid="uid://bmujxy8v2rye3" path="res://assets/UI/UG.png" id="4_mn5ks"]
 [ext_resource type="Texture2D" uid="uid://bovsoedlsnwps" path="res://assets/UI/UB.png" id="5_gihfi"]
 [ext_resource type="Texture2D" uid="uid://bpirhq8btrs3h" path="res://assets/UI/PW.png" id="6_0iudi"]
 [ext_resource type="Texture2D" uid="uid://ic48ec3v14od" path="res://assets/UI/PG.png" id="7_dfnx7"]
 [ext_resource type="Texture2D" uid="uid://dejgprc3pp6v4" path="res://assets/UI/RW.png" id="7_sgkp3"]
-[ext_resource type="Texture2D" uid="uid://dq3l5uij7omyi" path="res://assets/UI/CTW.png" id="8_dfnx7"]
+[ext_resource type="Texture2D" uid="uid://cg81rky05fd6s" path="res://assets/UI/CTW.png" id="8_dfnx7"]
 [ext_resource type="Texture2D" uid="uid://xnu3bvejv2lk" path="res://assets/UI/PB.png" id="8_xbua1"]
 [ext_resource type="Texture2D" uid="uid://dr7qfwij401hp" path="res://assets/UI/RG.png" id="10_x28io"]
 [ext_resource type="Texture2D" uid="uid://bngn3x4snw8g4" path="res://assets/UI/RB.png" id="11_iwvkj"]
 [ext_resource type="Texture2D" uid="uid://c873ap8mjemeo" path="res://assets/UI/EW.png" id="13_a58ev"]
+[ext_resource type="Texture2D" uid="uid://bb3v0a0dtpqox" path="res://assets/UI/CTG.png" id="14_lxf8b"]
 [ext_resource type="Texture2D" uid="uid://ec8c0304a0ke" path="res://assets/UI/EG.png" id="14_t5gps"]
 [ext_resource type="Texture2D" uid="uid://7t8cbqacjq6e" path="res://assets/UI/EB.png" id="15_17lgj"]
+[ext_resource type="Texture2D" uid="uid://dluf4o8g280ok" path="res://assets/UI/CTB.png" id="15_vknwm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a58ev"]
 bg_color = Color(0.6, 0.6, 0.6, 0.19607843)
@@ -31,8 +34,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_jo8l1")
+script = ExtResource("2_t5gps")
 
 [node name="TOPLEFT" type="MarginContainer" parent="." unique_id=1581512858]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,6 +73,8 @@ text = "Move counter"
 
 [node name="UNDO" type="TextureButton" parent="TOPLEFT/VBoxContainer" unique_id=1870594433]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture_normal = ExtResource("3_mqv4c")
 texture_pressed = ExtResource("4_mn5ks")
 texture_hover = ExtResource("5_gihfi")
@@ -121,6 +128,10 @@ texture_focused = ExtResource("11_iwvkj")
 [node name="ROTATE" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1838048178]
 layout_mode = 2
 texture_normal = ExtResource("8_dfnx7")
+texture_pressed = ExtResource("14_lxf8b")
+texture_hover = ExtResource("15_vknwm")
+texture_disabled = ExtResource("8_dfnx7")
+texture_focused = ExtResource("15_vknwm")
 
 [node name="VIEW" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1331249508]
 layout_mode = 2
