@@ -14,12 +14,22 @@ var state_machine : StateMachine
 @export var levels_dir := "res://scenes/levels"
 @export var rat_node_path : String = "uid://drrs8ydypxlhr"
 
+var active_rat : Rat
 var move_inputs : Dictionary = {
 	"ui_up" : false,
 	"ui_down" : false,
 	"ui_left" : false,
 	"ui_right" : false
 }
+
+enum cam_dir {
+	POSX,
+	POSZ,
+	NEGX,
+	NEGZ
+}
+
+var active_cam_dir : cam_dir = cam_dir.POSX
 
 func _ready() -> void:
 	_setup_state_machine()
@@ -46,10 +56,9 @@ func _setup_state_machine() -> void:
 func _input(event: InputEvent) -> void:
 	for each in move_inputs.keys():
 		if event.is_action_pressed(each):
-			_request_movement(each)
+			if state_machine.transition_to(move_state):
+				active_rat._request_movement(event, active_cam_dir)
 
-func _request_movement(direction : InputEvent):
-	pass
 
 func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:
@@ -69,7 +78,7 @@ func _load_level(level_number : int) -> void:
 	add_child(new_level_instance)
 	_find_rat(new_level_instance)
 	camera._hook_level_size(new_level_instance)
-	camera._look_at_rat(0)
+	camera._look_at_rat(active_cam_dir as int)
 	
 func _find_rat(level : Node) -> void:
 	var new_rat : PackedScene = load(rat_node_path)
@@ -78,7 +87,7 @@ func _find_rat(level : Node) -> void:
 	
 	for child in level.get_children():
 		if child is SpawnMarker:
-			print("found the rat here: ", child)
+			print("Found the rat here: ", child)
 			rat_instance.global_position = child.global_position
 			camera._hook_rat(rat_instance)
 			return
