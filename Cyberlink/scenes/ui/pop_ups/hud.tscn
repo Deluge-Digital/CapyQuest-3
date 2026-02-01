@@ -16,6 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://ec8c0304a0ke" path="res://assets/UI/EG.png" id="14_t5gps"]
 [ext_resource type="Texture2D" uid="uid://7t8cbqacjq6e" path="res://assets/UI/EB.png" id="15_17lgj"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a58ev"]
+bg_color = Color(0.6, 0.6, 0.6, 0.19607843)
+corner_radius_top_left = 4
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 12
+corner_detail = 1
+
 [node name="Hud" type="Control" unique_id=853124198]
 layout_mode = 3
 anchors_preset = 15
@@ -25,37 +32,41 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_jo8l1")
 
-[node name="TOPLEFT" type="PanelContainer" parent="." unique_id=1825344481]
+[node name="TOPLEFT" type="MarginContainer" parent="." unique_id=1581512858]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.01
-anchor_right = 0.01
-anchor_bottom = 0.01
-offset_right = 131.0
-offset_bottom = 101.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 960
+theme_override_constants/margin_bottom = 480
+
+[node name="Panel" type="Panel" parent="TOPLEFT" unique_id=1965008975]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a58ev")
+
+[node name="PanelScreen" type="PanelContainer" parent="TOPLEFT" unique_id=1825344481]
+layout_mode = 2
 theme_override_styles/panel = ExtResource("2_6hj5w")
 
-[node name="MarginContainer" type="MarginContainer" parent="TOPLEFT" unique_id=1581512858]
+[node name="VBoxContainer" type="VBoxContainer" parent="TOPLEFT" unique_id=2052052956]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TOPLEFT/MarginContainer" unique_id=2052052956]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 alignment = 1
 
-[node name="NAME" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1816416817]
+[node name="NAME" type="Label" parent="TOPLEFT/VBoxContainer" unique_id=1816416817]
 layout_mode = 2
 text = "Level Name"
 
-[node name="MOVES" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1473243748]
+[node name="MOVES" type="Label" parent="TOPLEFT/VBoxContainer" unique_id=1473243748]
 layout_mode = 2
 text = "Move counter"
 
-[node name="UNDO" type="TextureButton" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1870594433]
+[node name="UNDO" type="TextureButton" parent="TOPLEFT/VBoxContainer" unique_id=1870594433]
 layout_mode = 2
 texture_normal = ExtResource("3_mqv4c")
 texture_pressed = ExtResource("4_mn5ks")
@@ -63,18 +74,30 @@ texture_hover = ExtResource("5_gihfi")
 texture_disabled = ExtResource("3_mqv4c")
 texture_focused = ExtResource("5_gihfi")
 
-[node name="TOPRIGHT" type="PanelContainer" parent="." unique_id=1619556024]
+[node name="TOPRIGHT" type="MarginContainer" parent="." unique_id=1131314324]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.99
-anchor_top = 0.01
-anchor_right = 0.99
-anchor_bottom = 0.01
-grow_horizontal = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 960
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 480
+
+[node name="Panel" type="Panel" parent="TOPRIGHT" unique_id=351586729]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a58ev")
+
+[node name="Panel Screen" type="PanelContainer" parent="TOPRIGHT" unique_id=1619556024]
+layout_mode = 2
 theme_override_styles/panel = ExtResource("2_6hj5w")
 
 [node name="VBoxContainer" type="GridContainer" parent="TOPRIGHT" unique_id=641730311]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 9
 theme_override_constants/v_separation = 9
 columns = 2
@@ -107,18 +130,30 @@ texture_hover = ExtResource("15_17lgj")
 texture_disabled = ExtResource("13_a58ev")
 texture_focused = ExtResource("15_17lgj")
 
-[node name="BOTTOMLEFT" type="PanelContainer" parent="." unique_id=773765991]
+[node name="BOTTOMLEFT" type="MarginContainer" parent="." unique_id=1096577896]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.01
-anchor_top = 0.99
-anchor_right = 0.01
-anchor_bottom = 0.99
-grow_vertical = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 480
+theme_override_constants/margin_right = 960
+theme_override_constants/margin_bottom = 24
+
+[node name="Panel" type="Panel" parent="BOTTOMLEFT" unique_id=1727993500]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a58ev")
+
+[node name="PanelScreen" type="PanelContainer" parent="BOTTOMLEFT" unique_id=773765991]
+layout_mode = 2
 theme_override_styles/panel = ExtResource("2_6hj5w")
 
 [node name="MarginContainer" type="MarginContainer" parent="BOTTOMLEFT" unique_id=1339643837]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -128,19 +163,30 @@ theme_override_constants/margin_bottom = 12
 layout_mode = 2
 text = "Inventory?"
 
-[node name="BOTTOMRIGHT" type="PanelContainer" parent="." unique_id=1692960495]
+[node name="BOTTOMRIGHT" type="MarginContainer" parent="." unique_id=188425454]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.99
-anchor_top = 0.99
-anchor_right = 0.99
-anchor_bottom = 0.99
-grow_horizontal = 0
-grow_vertical = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 960
+theme_override_constants/margin_top = 480
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Panel" type="Panel" parent="BOTTOMRIGHT" unique_id=1486556476]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a58ev")
+
+[node name="PanelScreen" type="PanelContainer" parent="BOTTOMRIGHT" unique_id=1692960495]
+layout_mode = 2
 theme_override_styles/panel = ExtResource("2_6hj5w")
 
 [node name="MarginContainer" type="MarginContainer" parent="BOTTOMRIGHT" unique_id=1050102311]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12

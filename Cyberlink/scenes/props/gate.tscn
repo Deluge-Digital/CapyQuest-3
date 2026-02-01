@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://u2xn28py5abe" path="res://scripts/props/gate.gd" id="1_nm6xp"]
 [ext_resource type="PackedScene" uid="uid://dlyse7loh6j8k" path="res://assets/models/Gate.glb" id="2_ys6ft"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys6ft"]
-
 [sub_resource type="Animation" id="Animation_3q5bc"]
 length = 0.001
 tracks/0/type = "value"
@@ -99,11 +97,8 @@ size = Vector3(8, 8, 8)
 [node name="Gate" type="Area3D" unique_id=1942757170]
 script = ExtResource("1_nm6xp")
 
-[node name="Gate2" parent="." unique_id=1452160971 instance=ExtResource("2_ys6ft")]
+[node name="Gate2" parent="." unique_id=1638681095 instance=ExtResource("2_ys6ft")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="RightDoor" parent="Gate2" index="1" unique_id=1830364698]
-surface_material_override/0 = SubResource("StandardMaterial3D_ys6ft")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1681585756]
 libraries/ = SubResource("AnimationLibrary_3q5bc")

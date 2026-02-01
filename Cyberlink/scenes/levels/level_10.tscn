@@ -13,7 +13,13 @@ radius = 1.471
 height = 4.884
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pimnq"]
-albedo_color = Color(0.84, 0, 0, 1)
+albedo_color = Color(0, 0, 0.8392157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hh2oi"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qblg5"]
+albedo_color = Color(0.19999993, 1, 0, 1)
 
 [node name="Level1" type="Node3D" unique_id=853865969]
 script = ExtResource("1_hh2oi")
@@ -561,6 +567,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 68)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 3.2, 28)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Locked Door" unique_id=994667806]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -8)
 mesh = SubResource("CapsuleMesh_ugcn1")
 surface_material_override/0 = SubResource("StandardMaterial3D_pimnq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Locked Door" unique_id=1270921027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -16)
+mesh = SubResource("CapsuleMesh_ugcn1")
+surface_material_override/0 = SubResource("StandardMaterial3D_hh2oi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Locked Door" unique_id=92449356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 0)
+mesh = SubResource("CapsuleMesh_ugcn1")
+surface_material_override/0 = SubResource("StandardMaterial3D_qblg5")

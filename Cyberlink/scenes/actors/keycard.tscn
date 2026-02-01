@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cyp6ao05obu7e"]
 
 [ext_resource type="PackedScene" uid="uid://orwknnpglshr" path="res://assets/models/Keycard.glb" id="1_arvw2"]
+[ext_resource type="Script" uid="uid://d3vwerw886wft" path="res://scenes/actors/keycard.gd" id="1_cbcvk"]
+[ext_resource type="PackedScene" uid="uid://b3wg45gner2y3" path="res://scenes/props/keycard_inherited.tscn" id="3_0rgng"]
 
 [sub_resource type="Animation" id="Animation_cbcvk"]
 length = 0.001
@@ -47,9 +49,15 @@ _data = {
 }
 
 [node name="Keycard" type="Node3D" unique_id=809400010]
+script = ExtResource("1_cbcvk")
+tile_color = 1
 
 [node name="Keycard2" parent="." unique_id=1178490402 instance=ExtResource("1_arvw2")]
 transform = Transform3D(0.7071067, -0.51291704, -0.4867401, 0, 0.6883545, -0.7253743, 0.7071067, 0.51291704, 0.4867401, 0, 1.3046815, 0)
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1408583976]
 libraries/ = SubResource("AnimationLibrary_goqc5")
+
+[node name="Keycard3" parent="." unique_id=964703460 instance=ExtResource("3_0rgng")]
+transform = Transform3D(0.70710677, -0.5129171, -0.48674017, 0, 0.68835455, -0.72537434, 0.70710677, 0.5129171, 0.48674017, 0, 1.3046815, 0)
