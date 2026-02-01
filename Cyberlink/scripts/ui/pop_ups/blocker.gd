@@ -27,5 +27,21 @@ func set_alpha(alpha : float, use_tween : bool = true) -> void:
 	else:
 		_set_bg_alpha(alpha)
 
-func _set_bg_alpha(alpha: float) -> void:
+func _set_bg_alpha(alpha : float) -> void:
 	_blocker_bg.color = Color(0, 0, 0, alpha)
+	
+func _set_color(req_color : Color, use_tween : bool = true) -> void:
+	var current_color = _blocker_bg.color
+	kill_tween()
+
+	if use_tween:
+		_tween = create_tween()
+		_tween.tween_method(_set_bg_color, current_color, req_color, FADE_TIME)
+		await _tween.finished
+		
+	else: 
+		_set_bg_color(req_color)
+		
+func _set_bg_color(color : Color) -> void:
+	_blocker_bg.color = color
+	

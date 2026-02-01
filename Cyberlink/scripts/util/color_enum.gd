@@ -9,5 +9,6 @@ enum TileColor {
 	BLUE_GREEN  = 3,
 	BLUE_RED    = 5,
 	GREEN_RED   = 6,
-	ALL         = 7
+	ALL         = 7,
+	BLOCK       = 8
 }

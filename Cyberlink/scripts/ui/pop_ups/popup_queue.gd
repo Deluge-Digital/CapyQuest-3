@@ -7,7 +7,8 @@ var _number_paused : int = 0
 @export var _blocker : Blocker
 
 func _ready() -> void:
-	self.visible = false
+	#self.visible = false
+	pass
 	
 func clear_queue() -> void:
 	_blocker.kill_tween()
@@ -16,7 +17,7 @@ func clear_queue() -> void:
 		each.visible = false
 		_queue.erase(each.name)
 		each.queue_free()
-	self.visible = false
+	#self.visible = false
 
 ## Showing popup procedure
 func show_popup(popup_type : BasePopup.POPUP_TYPE, params : Dictionary = {}) -> String:
@@ -90,19 +91,3 @@ func _on_after_dismiss(popup: BasePopup) -> void:
 		self.visible = false
 	popup.on_after_dismiss()
 	popup.queue_free()
-
-
-func _input(event: InputEvent) -> void:
-	# Pause handler
-	if event is InputEventKey:
-		if event.keycode == KEY_ESCAPE && event.is_released():
-			if _queue.size() == 0:
-				return
-			var popup: BasePopup = _queue.values().back()
-			var current_state = GameManager.get_current_state()
-			
-			# pause only happens after all the DISMISS_ON_ESCAPE modals are down
-			if popup && (popup.is_dismiss_on_escape()):
-				GameManager.dismiss_popup()
-			elif current_state == GameManager.play_state:
-				GameManager.show_popup(BasePopup.POPUP_TYPE.PAUSE)

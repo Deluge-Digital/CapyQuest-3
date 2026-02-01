@@ -1,7 +1,7 @@
 extends BaseProp
 class_name Wall
 
-@export var tile_color: color_enum.TileColor = color_enum.TileColor.NONE
+@export var tile_color: color_enum.TileColor = color_enum.TileColor.BLOCK
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 
 
@@ -42,6 +42,9 @@ func set_color():
 			material = mesh_instance_3d.mesh.surface_get_material(0).duplicate()
 			mesh_instance_3d.mesh.surface_set_material(0, material)
 		material.albedo_color = Color(0.983, 1.0, 0.0, 1.0)
+
+func get_color() -> color_enum.TileColor:
+	return tile_color
 
 func _ready() -> void:
 	set_color()

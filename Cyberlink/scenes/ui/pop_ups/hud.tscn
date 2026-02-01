@@ -75,6 +75,7 @@ text = "Move counter"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
 texture_normal = ExtResource("3_mqv4c")
 texture_pressed = ExtResource("4_mn5ks")
 texture_hover = ExtResource("5_gihfi")
@@ -88,6 +89,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_behavior_recursive = 2
 theme_override_constants/margin_left = 960
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
@@ -111,6 +113,7 @@ columns = 2
 
 [node name="MENU" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1694134699]
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("6_0iudi")
 texture_pressed = ExtResource("7_dfnx7")
 texture_hover = ExtResource("8_xbua1")
@@ -119,6 +122,7 @@ texture_focused = ExtResource("8_xbua1")
 
 [node name="RETRY" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=735530130]
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("7_sgkp3")
 texture_pressed = ExtResource("10_x28io")
 texture_hover = ExtResource("11_iwvkj")
@@ -127,6 +131,7 @@ texture_focused = ExtResource("11_iwvkj")
 
 [node name="ROTATE" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1838048178]
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("8_dfnx7")
 texture_pressed = ExtResource("14_lxf8b")
 texture_hover = ExtResource("15_vknwm")
@@ -135,6 +140,7 @@ texture_focused = ExtResource("15_vknwm")
 
 [node name="VIEW" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1331249508]
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("13_a58ev")
 texture_pressed = ExtResource("14_t5gps")
 texture_hover = ExtResource("15_17lgj")
@@ -148,6 +154,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_behavior_recursive = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 480
 theme_override_constants/margin_right = 960
@@ -181,6 +188,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_behavior_recursive = 2
 theme_override_constants/margin_left = 960
 theme_override_constants/margin_top = 480
 theme_override_constants/margin_right = 24
@@ -208,12 +216,19 @@ layout_mode = 2
 
 [node name="RED" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=2032232331]
 layout_mode = 2
+focus_mode = 0
 text = "Red"
 
 [node name="GREEN" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1963140193]
 layout_mode = 2
+focus_mode = 0
 text = "Green"
 
 [node name="BLUE" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1397645864]
 layout_mode = 2
+focus_mode = 0
 text = "Blue"
+
+[connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/RED" to="." method="_on_red_pressed"]
+[connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/GREEN" to="." method="_on_green_pressed"]
+[connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/BLUE" to="." method="_on_blue_pressed"]

@@ -3,7 +3,8 @@ extends Control
 
 enum POPUP_TYPE{
 	GENERIC,
-	PAUSE
+	PAUSE,
+	HUD
 }
 
 #Bit Flags

@@ -11,6 +11,7 @@ var state_machine : StateMachine
 @export var scene_root : Control
 @export var popup_queue : PopupQueue
 @export var level_manager : LevelManager
+@export var blocker : Blocker
 
 func _ready() -> void:
 	# Check to see if the current scene is the default. If so, kill it.
@@ -58,7 +59,6 @@ func request_pause() -> bool:
 func request_unpause() -> bool:
 	var success : bool = state_machine.transition_to(play_state)
 	return success
-	
 
 ## Waits one frame to let allow signals to finalize.
 func change_scene_deferred(scene : PackedScene) -> void:
@@ -72,3 +72,18 @@ func change_scene_sync(scene : PackedScene) -> void:
 	
 	var new_scene = scene.instantiate()
 	scene_root.add_child(new_scene)
+
+func _update_color() -> void:
+	if state_machine.current_state == play_state:
+		var req_color : Color
+		match PlayerData.get_player_color() : 
+			color_enum.TileColor.NONE : req_color = Color(0.0, 0.0, 0.0, 0.0)
+			color_enum.TileColor.BLUE : req_color = Color(0.0, 0.0, 1.0, 0.392)
+			color_enum.TileColor.GREEN : req_color = Color(0.0, 1.0, 0.0, 0.392)
+			color_enum.TileColor.RED : req_color = Color(1.0, 0.0, 0.0, 0.392)
+			color_enum.TileColor.BLUE_GREEN : req_color = Color(0.0, 1.0, 1.0, 0.392)
+			color_enum.TileColor.BLUE_RED : req_color = Color(1.0, 0.0, 1.0, 0.392)
+			color_enum.TileColor.GREEN_RED : req_color = Color(1.0, 1.0, 0.0, 0.392)
+			color_enum.TileColor.ALL : req_color = Color(1.0, 1.0, 1.0, 0.392)
+			_: Color(0.0, 0.0, 0.0, 0.0)
+		blocker._set_color(req_color, false)

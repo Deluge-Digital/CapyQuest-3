@@ -13,7 +13,6 @@ func wincheck():
 		print("youwin!!")
 
 func _input(event: InputEvent) -> void:
-	print(str($Ratmouse/Raticus.position))
 	wincheck()
 	
 

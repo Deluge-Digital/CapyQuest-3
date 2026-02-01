@@ -19,7 +19,7 @@ sky = SubResource("Sky_ternb")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="GameManager" type="Control" unique_id=1981080538 node_paths=PackedStringArray("camera", "scene_root", "popup_queue", "level_manager")]
+[node name="GameManager" type="Control" unique_id=1981080538 node_paths=PackedStringArray("camera", "scene_root", "popup_queue", "level_manager", "blocker")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,6 +31,7 @@ camera = NodePath("Camera3D")
 scene_root = NodePath("SceneRoot")
 popup_queue = NodePath("PopupQueue")
 level_manager = NodePath("LevelManager")
+blocker = NodePath("PopupQueue/Blocker")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1418462508]
 environment = SubResource("Environment_q8mjp")
@@ -62,8 +63,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_udu3i")
 _blocker = NodePath("Blocker")
 
 [node name="Blocker" parent="PopupQueue" unique_id=861369603 instance=ExtResource("4_oo155")]
+top_level = true
 layout_mode = 1
+mouse_filter = 2
