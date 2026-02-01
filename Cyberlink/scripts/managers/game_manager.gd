@@ -59,6 +59,10 @@ func request_pause() -> bool:
 func request_unpause() -> bool:
 	var success : bool = state_machine.transition_to(play_state)
 	return success
+	
+func request_main_menu() -> bool:
+	var success : bool = state_machine.transition_to(main_menu_state)
+	return success
 
 ## Waits one frame to let allow signals to finalize.
 func change_scene_deferred(scene : PackedScene) -> void:

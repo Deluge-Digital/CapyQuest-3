@@ -33,6 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme = ExtResource("1_jo8l1")
 script = ExtResource("2_t5gps")
 
@@ -44,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 960
@@ -89,6 +91,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 mouse_behavior_recursive = 2
 theme_override_constants/margin_left = 960
 theme_override_constants/margin_top = 24
@@ -154,6 +157,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 mouse_behavior_recursive = 2
 theme_override_constants/margin_left = 24
 theme_override_constants/margin_top = 480
@@ -188,6 +192,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 mouse_behavior_recursive = 2
 theme_override_constants/margin_left = 960
 theme_override_constants/margin_top = 480
@@ -229,6 +234,10 @@ layout_mode = 2
 focus_mode = 0
 text = "Blue"
 
+[connection signal="pressed" from="TOPRIGHT/VBoxContainer/MENU" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="TOPRIGHT/VBoxContainer/RETRY" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="TOPRIGHT/VBoxContainer/ROTATE" to="." method="_on_rotate_pressed"]
+[connection signal="pressed" from="TOPRIGHT/VBoxContainer/VIEW" to="." method="_on_view_pressed"]
 [connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/RED" to="." method="_on_red_pressed"]
 [connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/GREEN" to="." method="_on_green_pressed"]
 [connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/BLUE" to="." method="_on_blue_pressed"]

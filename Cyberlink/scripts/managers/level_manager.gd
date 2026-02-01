@@ -29,6 +29,7 @@ enum cam_dir {
 	NEGZ
 }
 
+var current_level : int = 0
 var rat_cam_mode : bool = true
 var active_cam_dir : cam_dir = cam_dir.POSX
 
@@ -63,23 +64,32 @@ func _input(event: InputEvent) -> void:
 				await get_tree().physics_frame
 				_update_camera()
 	if event.is_action_pressed("camera_turn_left"):
-		match active_cam_dir:
-			cam_dir.POSX: active_cam_dir = cam_dir.POSZ
-			cam_dir.POSZ: active_cam_dir = cam_dir.NEGX
-			cam_dir.NEGX: active_cam_dir = cam_dir.NEGZ
-			cam_dir.NEGZ: active_cam_dir = cam_dir.POSX
-		_update_camera()
+		_turn_camera_left()
 	if event.is_action_pressed("camera_turn_right"):
-		match active_cam_dir:
-			cam_dir.POSX: active_cam_dir = cam_dir.NEGZ
-			cam_dir.POSZ: active_cam_dir = cam_dir.POSX
-			cam_dir.NEGX: active_cam_dir = cam_dir.POSZ
-			cam_dir.NEGZ: active_cam_dir = cam_dir.NEGX
-		_update_camera()
+		_turn_camera_right()
 	if event.is_action_pressed("camera_mode"):
-		rat_cam_mode = !rat_cam_mode
-		_update_camera()
-		
+		_change_rat_cam()
+
+func _turn_camera_left() -> void:
+	match active_cam_dir:
+		cam_dir.POSX: active_cam_dir = cam_dir.POSZ
+		cam_dir.POSZ: active_cam_dir = cam_dir.NEGX
+		cam_dir.NEGX: active_cam_dir = cam_dir.NEGZ
+		cam_dir.NEGZ: active_cam_dir = cam_dir.POSX
+	_update_camera()
+
+func _turn_camera_right() -> void:
+	match active_cam_dir:
+		cam_dir.POSX: active_cam_dir = cam_dir.NEGZ
+		cam_dir.POSZ: active_cam_dir = cam_dir.POSX
+		cam_dir.NEGX: active_cam_dir = cam_dir.POSZ
+		cam_dir.NEGZ: active_cam_dir = cam_dir.NEGX
+	_update_camera()
+
+func _change_rat_cam() -> void:
+	rat_cam_mode = !rat_cam_mode
+	_update_camera()
+
 func _update_camera() -> void:
 	if rat_cam_mode:
 		camera._look_at_rat(active_cam_dir as int)
@@ -87,10 +97,14 @@ func _update_camera() -> void:
 		camera._turn_level_camera(active_cam_dir as int)
 	
 
+func _reset_level() -> void:
+	_load_level(current_level)
+
 func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:
 		print("Invalid state to ready level. Currently in ", state_machine.current_state)
 		return
+	current_level = level_number
 	_load_level(level_number)
 
 func _load_level(level_number : int) -> void:
