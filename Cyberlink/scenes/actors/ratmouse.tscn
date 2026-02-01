@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id="Animation_ehad1"]
 resource_name = "Movement Anim"
-length = 2.0333333
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
