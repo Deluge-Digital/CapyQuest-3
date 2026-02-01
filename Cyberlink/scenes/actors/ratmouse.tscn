@@ -3,45 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://c7mv3vanmncbt" path="res://assets/models/Raticus.glb" id="1_ehad1"]
 [ext_resource type="Script" uid="uid://c8atbqvi11iwc" path="res://scripts/actors/ratmouse.gd" id="1_jxxoo"]
 
-[sub_resource type="Animation" id="Animation_ehad1"]
-resource_name = "Movement Anim"
+[sub_resource type="Animation" id="Animation_so38d"]
+resource_name = "Backflip"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Raticus:scale")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Raticus:position")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 0.364, 1.315), Vector3(1, 0.667, 0.75), Vector3(1, 0.364, 1.315)]
+"values": [Vector3(0, 0, 0), Vector3(-4, 4, 0), Vector3(0, 8, 0), Vector3(4, 4, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Raticus:position")
+tracks/1/path = NodePath("Raticus:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2666668),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.041192055, -2.3841858e-07, -0.118888855), Vector3(-7.431738, 4.712203, -0.1188879), Vector3(0, 9.503658, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Raticus:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2666668, 1.6000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, 3.1415927), Vector3(0, 0, -1.7749999)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, -3.1415927), Vector3(0, 0, -4.712389), Vector3(0, 0, -6.2831855)]
 }
 
 [sub_resource type="Animation" id="Animation_4kme6"]
@@ -116,6 +103,47 @@ tracks/2/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ehad1"]
+resource_name = "Silly Flip Backflip"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Raticus:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0.364, 1.315), Vector3(1, 0.667, 0.75), Vector3(1, 0.364, 1.315)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Raticus:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.041192055, -2.3841858e-07, -0.118888855), Vector3(-7.431738, 4.712203, -0.1188879), Vector3(0, 9.503658, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Raticus:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2666668, 1.6000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, 3.1415927), Vector3(0, 0, -1.7749999)]
+}
+
 [sub_resource type="Animation" id="Animation_k70wj"]
 length = 2.0
 tracks/0/type = "value"
@@ -133,10 +161,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4kme6"]
 _data = {
-&"Backflip": SubResource("Animation_ehad1"),
+&"Backflip": SubResource("Animation_so38d"),
 &"Idle": SubResource("Animation_4kme6"),
 &"Jump": SubResource("Animation_ne848"),
 &"RESET": SubResource("Animation_jxxoo"),
+&"Silly Flip Backflip": SubResource("Animation_ehad1"),
 &"Walk": SubResource("Animation_k70wj")
 }
 
