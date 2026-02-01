@@ -25,6 +25,7 @@ GameManager="*uid://cllw3lm1t8syq"
 PlayerData="*uid://c64ss7w2ldt87"
 SignalBus="*uid://6higs1kg4s34"
 ColorEnum="*uid://cyauwxo8dd5qa"
+GlobalSoundmanager="*uid://b65msakoh47i2"
 
 [file_customization]
 
