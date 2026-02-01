@@ -3,7 +3,10 @@
 [ext_resource type="Theme" uid="uid://qis5tgnaxcq8" path="res://assets/UI/Sci-Fi Menu.tres" id="1_fe2o3"]
 [ext_resource type="Script" uid="uid://bku3a4cyty86s" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="FontFile" uid="uid://b3xocaok27886" path="res://assets/Cyberphont 3.0 A.ttf" id="3_1g8jr"]
-[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_m1kxf"]
+[ext_resource type="PackedScene" uid="uid://hcoi8dxa5rd1" path="res://scenes/ui/pop_ups/level_select.tscn" id="3_x2yvf"]
+[ext_resource type="PackedScene" uid="uid://b38tgajokhp56" path="res://scenes/ui/pop_ups/settings.tscn" id="4_btxxm"]
+[ext_resource type="Script" path="res://scripts/ui/buttons.gd" id="4_m1kxf"]
+[ext_resource type="PackedScene" uid="uid://dhqib8ivegwtb" path="res://scenes/ui/pop_ups/credits.tscn" id="5_wb0q5"]
 
 [sub_resource type="Animation" id="Animation_uhagc"]
 length = 0.001
@@ -76,7 +79,7 @@ _data = {
 &"menu_on": SubResource("Animation_x2yvf")
 }
 
-[node name="MainMenu" type="Control" unique_id=2116475503 node_paths=PackedStringArray("animator")]
+[node name="MainMenu" type="Control" unique_id=2116475503 node_paths=PackedStringArray("title", "animator")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,21 +90,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_fe2o3")
 script = ExtResource("1_sl1te")
-animator = NodePath("AnimationPlayer")
+title = NodePath("Title")
+animator = NodePath("Title/AnimationPlayer")
+level_select = ExtResource("3_x2yvf")
+settings = ExtResource("4_btxxm")
+credits = ExtResource("5_wb0q5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=728682949]
+[node name="Title" type="Control" parent="." unique_id=608700614]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title" unique_id=728682949]
 layout_mode = 0
 offset_right = 1172.0
-offset_bottom = 703.0
+offset_bottom = 783.0
 alignment = 1
 
-[node name="TITLE" type="MarginContainer" parent="VBoxContainer" unique_id=899533728]
+[node name="TITLE" type="MarginContainer" parent="Title/VBoxContainer" unique_id=899533728]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 48
 theme_override_constants/margin_right = 20
 
-[node name="NAME" type="Label" parent="VBoxContainer/TITLE" unique_id=2102041248]
+[node name="NAME" type="Label" parent="Title/VBoxContainer/TITLE" unique_id=2102041248]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_fonts/font = ExtResource("3_1g8jr")
@@ -110,68 +122,73 @@ text = "Hackrat"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MENU" type="MarginContainer" parent="VBoxContainer" unique_id=1916563172]
+[node name="MENU" type="MarginContainer" parent="Title/VBoxContainer" unique_id=1916563172]
 layout_mode = 2
 theme_override_constants/margin_left = 480
 theme_override_constants/margin_top = 240
 theme_override_constants/margin_right = 480
 theme_override_constants/margin_bottom = 240
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MENU" unique_id=2099127233]
+[node name="VBoxContainer" type="VBoxContainer" parent="Title/VBoxContainer/MENU" unique_id=2099127233]
 layout_mode = 2
 alignment = 1
 
-[node name="START" type="Button" parent="VBoxContainer/MENU/VBoxContainer" unique_id=961374716]
+[node name="START" type="Button" parent="Title/VBoxContainer/MENU/VBoxContainer" unique_id=961374716]
 layout_mode = 2
 text = "Start Game"
 script = ExtResource("4_m1kxf")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="LEVELS" type="Button" parent="VBoxContainer/MENU/VBoxContainer" unique_id=394286328]
+[node name="LEVELS" type="Button" parent="Title/VBoxContainer/MENU/VBoxContainer" unique_id=394286328]
 layout_mode = 2
 text = "Level Select"
 script = ExtResource("4_m1kxf")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="SETTINGS" type="Button" parent="VBoxContainer/MENU/VBoxContainer" unique_id=632922865]
+[node name="SETTINGS" type="Button" parent="Title/VBoxContainer/MENU/VBoxContainer" unique_id=632922865]
 layout_mode = 2
 text = "Options"
 script = ExtResource("4_m1kxf")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="CREDITS" type="Button" parent="VBoxContainer/MENU/VBoxContainer" unique_id=1941408825]
+[node name="CREDITS" type="Button" parent="Title/VBoxContainer/MENU/VBoxContainer" unique_id=1941408825]
 layout_mode = 2
 text = "Credits"
 script = ExtResource("4_m1kxf")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="END" type="Button" parent="VBoxContainer/MENU/VBoxContainer" unique_id=1792857773]
+[node name="END" type="Button" parent="Title/VBoxContainer/MENU/VBoxContainer" unique_id=1792857773]
 layout_mode = 2
 text = "Quit Game"
 script = ExtResource("4_m1kxf")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=855577334]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title" unique_id=855577334]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_uhagc")
 
-[connection signal="focus_entered" from="VBoxContainer/MENU/VBoxContainer/START" to="VBoxContainer/MENU/VBoxContainer/START" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MENU/VBoxContainer/START" to="VBoxContainer/MENU/VBoxContainer/START" method="_on_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/MENU/VBoxContainer/START" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/MENU/VBoxContainer/START" to="VBoxContainer/MENU/VBoxContainer/START" method="_on_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/MENU/VBoxContainer/LEVELS" to="VBoxContainer/MENU/VBoxContainer/LEVELS" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MENU/VBoxContainer/LEVELS" to="VBoxContainer/MENU/VBoxContainer/LEVELS" method="_on_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/MENU/VBoxContainer/LEVELS" to="VBoxContainer/MENU/VBoxContainer/LEVELS" method="_on_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/MENU/VBoxContainer/SETTINGS" to="VBoxContainer/MENU/VBoxContainer/SETTINGS" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MENU/VBoxContainer/SETTINGS" to="VBoxContainer/MENU/VBoxContainer/SETTINGS" method="_on_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/MENU/VBoxContainer/SETTINGS" to="VBoxContainer/MENU/VBoxContainer/SETTINGS" method="_on_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/MENU/VBoxContainer/CREDITS" to="VBoxContainer/MENU/VBoxContainer/CREDITS" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MENU/VBoxContainer/CREDITS" to="VBoxContainer/MENU/VBoxContainer/CREDITS" method="_on_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/MENU/VBoxContainer/CREDITS" to="VBoxContainer/MENU/VBoxContainer/CREDITS" method="_on_pressed"]
-[connection signal="focus_entered" from="VBoxContainer/MENU/VBoxContainer/END" to="VBoxContainer/MENU/VBoxContainer/END" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/MENU/VBoxContainer/END" to="VBoxContainer/MENU/VBoxContainer/END" method="_on_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/MENU/VBoxContainer/END" to="VBoxContainer/MENU/VBoxContainer/END" method="_on_pressed"]
+[connection signal="focus_entered" from="Title/VBoxContainer/MENU/VBoxContainer/START" to="Title/VBoxContainer/MENU/VBoxContainer/START" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Title/VBoxContainer/MENU/VBoxContainer/START" to="Title/VBoxContainer/MENU/VBoxContainer/START" method="_on_mouse_entered"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/START" to="Title/VBoxContainer/MENU/VBoxContainer/START" method="_on_pressed"]
+[connection signal="focus_entered" from="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" to="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" to="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" method="_on_mouse_entered"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" to="Title/VBoxContainer/MENU/VBoxContainer/LEVELS" method="_on_pressed"]
+[connection signal="focus_entered" from="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" to="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" to="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" method="_on_mouse_entered"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" to="Title/VBoxContainer/MENU/VBoxContainer/SETTINGS" method="_on_pressed"]
+[connection signal="focus_entered" from="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" to="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" to="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" method="_on_mouse_entered"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" to="Title/VBoxContainer/MENU/VBoxContainer/CREDITS" method="_on_pressed"]
+[connection signal="focus_entered" from="Title/VBoxContainer/MENU/VBoxContainer/END" to="Title/VBoxContainer/MENU/VBoxContainer/END" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="Title/VBoxContainer/MENU/VBoxContainer/END" to="Title/VBoxContainer/MENU/VBoxContainer/END" method="_on_mouse_entered"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/END" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="Title/VBoxContainer/MENU/VBoxContainer/END" to="Title/VBoxContainer/MENU/VBoxContainer/END" method="_on_pressed"]

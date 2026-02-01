@@ -2,7 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://qis5tgnaxcq8" path="res://assets/UI/Sci-Fi Menu.tres" id="1_ndgdd"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_1s7e3"]
-[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="3_77c0q"]
+[ext_resource type="Script" uid="uid://cxn4l3jtwy1ua" path="res://scripts/ui/pop_ups/level_select.gd" id="2_wrjml"]
+[ext_resource type="Script" path="res://scripts/ui/buttons.gd" id="3_77c0q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s7e3"]
 bg_color = Color(0.6, 0.6, 0.6, 0.19607843)
@@ -82,7 +83,7 @@ _data = {
 &"menu_on": SubResource("Animation_0c7r2")
 }
 
-[node name="Levels" type="Control" unique_id=206903053]
+[node name="Levels" type="Control" unique_id=206903053 node_paths=PackedStringArray("grid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,6 +91,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ndgdd")
+script = ExtResource("2_wrjml")
+grid = NodePath("MarginContainer/PanelContainer/GridContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1669958321]
 layout_mode = 1
@@ -119,84 +122,84 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 4
 
-[node name="L1" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=944995776]
+[node name="01" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=944995776]
 layout_mode = 2
 text = "Level 1"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L2" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1014237412]
+[node name="02" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1014237412]
 layout_mode = 2
 text = "Level 2"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L3" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=596532097]
+[node name="03" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=596532097]
 layout_mode = 2
 text = "Level 3"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L4" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=346051175]
+[node name="04" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=346051175]
 layout_mode = 2
 text = "Level 4"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L5" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=744716227]
+[node name="05" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=744716227]
 layout_mode = 2
 text = "Level 5"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L6" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1448432836]
+[node name="06" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1448432836]
 layout_mode = 2
 text = "Level 6"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L7" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1086379472]
+[node name="07" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1086379472]
 layout_mode = 2
 text = "Level 7"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L8" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=869440942]
+[node name="08" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=869440942]
 layout_mode = 2
 text = "Level 8"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L9" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=2019831846]
+[node name="09" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=2019831846]
 layout_mode = 2
 text = "Level 9"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L10" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1609245131]
+[node name="10" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=1609245131]
 layout_mode = 2
 text = "Level 10"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L11" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=142604382]
+[node name="11" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=142604382]
 layout_mode = 2
 text = "Level 11"
 script = ExtResource("3_77c0q")
 onHover = "uid://crwtq3dg71mj3"
 onSelect = "uid://cs0w25g1ridyl"
 
-[node name="L12" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=401148516]
+[node name="12" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=401148516]
 layout_mode = 2
 text = "Level 12"
 script = ExtResource("3_77c0q")
@@ -206,39 +209,39 @@ onSelect = "uid://cs0w25g1ridyl"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=904229265]
 libraries/ = SubResource("AnimationLibrary_q7fnk")
 
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L1" to="MarginContainer/PanelContainer/GridContainer/L1" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L1" to="MarginContainer/PanelContainer/GridContainer/L1" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L1" to="MarginContainer/PanelContainer/GridContainer/L1" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L2" to="MarginContainer/PanelContainer/GridContainer/L2" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L2" to="MarginContainer/PanelContainer/GridContainer/L2" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L2" to="MarginContainer/PanelContainer/GridContainer/L2" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L3" to="MarginContainer/PanelContainer/GridContainer/L3" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L3" to="MarginContainer/PanelContainer/GridContainer/L3" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L3" to="MarginContainer/PanelContainer/GridContainer/L3" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L4" to="MarginContainer/PanelContainer/GridContainer/L4" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L4" to="MarginContainer/PanelContainer/GridContainer/L4" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L4" to="MarginContainer/PanelContainer/GridContainer/L4" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L5" to="MarginContainer/PanelContainer/GridContainer/L5" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L5" to="MarginContainer/PanelContainer/GridContainer/L5" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L5" to="MarginContainer/PanelContainer/GridContainer/L5" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L6" to="MarginContainer/PanelContainer/GridContainer/L6" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L6" to="MarginContainer/PanelContainer/GridContainer/L6" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L6" to="MarginContainer/PanelContainer/GridContainer/L6" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L7" to="MarginContainer/PanelContainer/GridContainer/L7" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L7" to="MarginContainer/PanelContainer/GridContainer/L7" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L7" to="MarginContainer/PanelContainer/GridContainer/L7" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L8" to="MarginContainer/PanelContainer/GridContainer/L8" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L8" to="MarginContainer/PanelContainer/GridContainer/L8" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L8" to="MarginContainer/PanelContainer/GridContainer/L8" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L9" to="MarginContainer/PanelContainer/GridContainer/L9" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L9" to="MarginContainer/PanelContainer/GridContainer/L9" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L9" to="MarginContainer/PanelContainer/GridContainer/L9" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L10" to="MarginContainer/PanelContainer/GridContainer/L10" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L10" to="MarginContainer/PanelContainer/GridContainer/L10" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L10" to="MarginContainer/PanelContainer/GridContainer/L10" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L11" to="MarginContainer/PanelContainer/GridContainer/L11" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L11" to="MarginContainer/PanelContainer/GridContainer/L11" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L11" to="MarginContainer/PanelContainer/GridContainer/L11" method="_on_pressed"]
-[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/L12" to="MarginContainer/PanelContainer/GridContainer/L12" method="_on_focus_entered"]
-[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/L12" to="MarginContainer/PanelContainer/GridContainer/L12" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/L12" to="MarginContainer/PanelContainer/GridContainer/L12" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/01" to="MarginContainer/PanelContainer/GridContainer/01" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/01" to="MarginContainer/PanelContainer/GridContainer/01" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/01" to="MarginContainer/PanelContainer/GridContainer/01" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/02" to="MarginContainer/PanelContainer/GridContainer/02" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/02" to="MarginContainer/PanelContainer/GridContainer/02" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/02" to="MarginContainer/PanelContainer/GridContainer/02" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/03" to="MarginContainer/PanelContainer/GridContainer/03" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/03" to="MarginContainer/PanelContainer/GridContainer/03" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/03" to="MarginContainer/PanelContainer/GridContainer/03" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/04" to="MarginContainer/PanelContainer/GridContainer/04" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/04" to="MarginContainer/PanelContainer/GridContainer/04" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/04" to="MarginContainer/PanelContainer/GridContainer/04" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/05" to="MarginContainer/PanelContainer/GridContainer/05" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/05" to="MarginContainer/PanelContainer/GridContainer/05" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/05" to="MarginContainer/PanelContainer/GridContainer/05" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/06" to="MarginContainer/PanelContainer/GridContainer/06" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/06" to="MarginContainer/PanelContainer/GridContainer/06" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/06" to="MarginContainer/PanelContainer/GridContainer/06" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/07" to="MarginContainer/PanelContainer/GridContainer/07" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/07" to="MarginContainer/PanelContainer/GridContainer/07" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/07" to="MarginContainer/PanelContainer/GridContainer/07" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/08" to="MarginContainer/PanelContainer/GridContainer/08" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/08" to="MarginContainer/PanelContainer/GridContainer/08" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/08" to="MarginContainer/PanelContainer/GridContainer/08" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/09" to="MarginContainer/PanelContainer/GridContainer/09" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/09" to="MarginContainer/PanelContainer/GridContainer/09" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/09" to="MarginContainer/PanelContainer/GridContainer/09" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/10" to="MarginContainer/PanelContainer/GridContainer/10" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/10" to="MarginContainer/PanelContainer/GridContainer/10" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/10" to="MarginContainer/PanelContainer/GridContainer/10" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/11" to="MarginContainer/PanelContainer/GridContainer/11" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/11" to="MarginContainer/PanelContainer/GridContainer/11" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/11" to="MarginContainer/PanelContainer/GridContainer/11" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelContainer/GridContainer/12" to="MarginContainer/PanelContainer/GridContainer/12" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelContainer/GridContainer/12" to="MarginContainer/PanelContainer/GridContainer/12" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/GridContainer/12" to="MarginContainer/PanelContainer/GridContainer/12" method="_on_pressed"]
