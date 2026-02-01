@@ -227,20 +227,20 @@ layout_mode = 2
 focus_mode = 0
 text = "Red"
 
-[node name="GREEN" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1963140193]
-layout_mode = 2
-focus_mode = 0
-text = "Green"
-
 [node name="BLUE" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1397645864]
 layout_mode = 2
 focus_mode = 0
 text = "Blue"
+
+[node name="GREEN" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1963140193]
+layout_mode = 2
+focus_mode = 0
+text = "Green"
 
 [connection signal="pressed" from="TOPRIGHT/VBoxContainer/MENU" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="TOPRIGHT/VBoxContainer/RETRY" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="TOPRIGHT/VBoxContainer/ROTATE" to="." method="_on_rotate_pressed"]
 [connection signal="pressed" from="TOPRIGHT/VBoxContainer/VIEW" to="." method="_on_view_pressed"]
 [connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/RED" to="." method="_on_red_pressed"]
-[connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/GREEN" to="." method="_on_green_pressed"]
 [connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/BLUE" to="." method="_on_blue_pressed"]
+[connection signal="pressed" from="BOTTOMRIGHT/MarginContainer/HBoxContainer/GREEN" to="." method="_on_green_pressed"]
