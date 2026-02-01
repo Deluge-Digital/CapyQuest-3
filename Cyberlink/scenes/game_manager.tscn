@@ -7,6 +7,11 @@
 [ext_resource type="Script" uid="uid://cv8t3c0ryu0k8" path="res://scripts/systems/camera_control.gd" id="3_eaq8r"]
 [ext_resource type="PackedScene" uid="uid://cxut7p7twsnes" path="res://scenes/ui/pop_ups/blocker.tscn" id="4_oo155"]
 
+[sub_resource type="Environment" id="Environment_ternb"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+ambient_light_color = Color(0, 0, 0.34117648, 1)
+
 [node name="GameManager" type="Control" unique_id=1981080538 node_paths=PackedStringArray("camera", "scene_root", "popup_queue", "level_manager", "blocker")]
 layout_mode = 3
 anchors_preset = 15
@@ -34,7 +39,9 @@ grow_vertical = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=305972526]
 transparent_bg = true
+handle_input_locally = false
 size = Vector2i(1152, 648)
+render_target_update_mode = 4
 
 [node name="LevelManager" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1640850077 node_paths=PackedStringArray("camera")]
 script = ExtResource("2_oo155")
@@ -43,6 +50,9 @@ camera = NodePath("../Camera3D")
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=21155025]
 current = true
 script = ExtResource("3_eaq8r")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1175131669]
+environment = SubResource("Environment_ternb")
 
 [node name="SceneRoot" type="Control" parent="." unique_id=795423356]
 layout_mode = 1
