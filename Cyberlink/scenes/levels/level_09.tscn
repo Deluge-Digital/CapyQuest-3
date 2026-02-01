@@ -5,17 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_7e7ni"]
 [ext_resource type="PackedScene" uid="uid://b4nnun040vehl" path="res://scenes/props/cheese.tscn" id="5_hvxp4"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="6_p7cwj"]
-[ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="7_5db3f"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ugcn1"]
-radius = 1.471
-height = 4.884
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pimnq"]
-albedo_color = Color(0.84, 0, 0, 1)
 
 [node name="Level09" type="Node3D" unique_id=853865969]
 script = ExtResource("1_q2hnt")
+starting_masks = 7
 
 [node name="Cheese" parent="." unique_id=1751089781 instance=ExtResource("5_hvxp4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 36)
@@ -23,16 +16,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 36)
 [node name="SpawnMarker" parent="." unique_id=1902784303 instance=ExtResource("6_p7cwj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
 
-[node name="Keycard" parent="." unique_id=809400010 instance=ExtResource("7_5db3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 0, 36)
-
 [node name="Locked Door" type="Node3D" parent="." unique_id=70839500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 3.2, 28)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Locked Door" unique_id=994667806]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -8)
-mesh = SubResource("CapsuleMesh_ugcn1")
-surface_material_override/0 = SubResource("StandardMaterial3D_pimnq")
 
 [node name="Ground" parent="." unique_id=140565938 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
