@@ -57,7 +57,7 @@ func _input(event: InputEvent) -> void:
 	for each in move_inputs.keys():
 		if event.is_action_pressed(each):
 			if state_machine.transition_to(move_state):
-				active_rat._request_movement(event, active_cam_dir)
+				active_rat._request_movement(each, active_cam_dir)
 
 
 func _ready_level(level_number : int) -> void:
@@ -79,11 +79,13 @@ func _load_level(level_number : int) -> void:
 	_find_rat(new_level_instance)
 	camera._hook_level_size(new_level_instance)
 	camera._look_at_rat(active_cam_dir as int)
+	state_machine.transition_to(waiting_state)
 	
 func _find_rat(level : Node) -> void:
 	var new_rat : PackedScene = load(rat_node_path)
 	var rat_instance = new_rat.instantiate()
 	level.add_child(rat_instance)
+	active_rat = rat_instance
 	
 	for child in level.get_children():
 		if child is SpawnMarker:

@@ -142,6 +142,7 @@ _data = {
 }
 
 [node name="Ratmouse" type="Node3D" unique_id=512260425 node_paths=PackedStringArray("sword_front", "sword_right", "sword_back", "sword_left")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_jxxoo")
 sword_front = NodePath("SwordsOfRevealingLight/Front")
 sword_right = NodePath("SwordsOfRevealingLight/Right")
