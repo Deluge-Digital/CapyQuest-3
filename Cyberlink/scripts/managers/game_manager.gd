@@ -91,3 +91,5 @@ func _update_color() -> void:
 			color_enum.TileColor.ALL : req_color = Color(1.0, 1.0, 1.0, 0.392)
 			_: Color(0.0, 0.0, 0.0, 0.0)
 		blocker._set_color(req_color, false)
+		level_manager._refresh_level()
+	

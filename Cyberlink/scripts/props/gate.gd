@@ -1,10 +1,11 @@
 extends BaseProp
 class_name Gate
 
-@export var tile_color: color_enum.TileColor = color_enum.TileColor.NONE
 @onready var left_door: MeshInstance3D = $Gate2/LeftDoor 
 @onready var right_door: MeshInstance3D = $Gate2/RightDoor 
 
+func _update_visibility() -> void:
+	pass
 
 func set_color():
 	if tile_color == color_enum.TileColor.RED:

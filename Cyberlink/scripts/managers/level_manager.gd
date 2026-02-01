@@ -30,6 +30,7 @@ enum cam_dir {
 }
 
 var current_level : int = 0
+var current_level_node : Node
 var rat_cam_mode : bool = true
 var active_cam_dir : cam_dir = cam_dir.POSX
 
@@ -69,6 +70,12 @@ func _input(event: InputEvent) -> void:
 		_turn_camera_right()
 	if event.is_action_pressed("camera_mode"):
 		_change_rat_cam()
+
+func _refresh_level() -> void:
+	if current_level_node:
+		for each in current_level_node.get_children():
+			if each is BaseProp:
+				each._update_visibility()
 
 func _turn_camera_left() -> void:
 	match active_cam_dir:
@@ -116,6 +123,8 @@ func _load_level(level_number : int) -> void:
 		
 	var new_level : PackedScene = load(path)
 	var new_level_instance : Node = new_level.instantiate()
+	current_level_node = new_level_instance
+	
 	add_child(new_level_instance)
 	_find_rat(new_level_instance)
 	camera._hook_level_size(new_level_instance)

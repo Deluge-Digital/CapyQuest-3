@@ -1,7 +1,6 @@
 extends BaseProp
 class_name Wall
 
-@export var tile_color: color_enum.TileColor = color_enum.TileColor.BLOCK
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
 
 

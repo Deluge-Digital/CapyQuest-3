@@ -1,10 +1,6 @@
 extends BaseProp
 class_name Keycard
 
-
-
-
-@export var tile_color: color_enum.TileColor = color_enum.TileColor.NONE
 @onready var mesh_instance_3d: MeshInstance3D = $Keycard2/Keycard
 
 
