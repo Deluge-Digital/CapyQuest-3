@@ -9,6 +9,7 @@ func _ready() -> void:
 func wincheck():
 	if $Ratmouse.position == $Cheese.position:
 		$Ratmouse/AnimationPlayer.play("Movement Anim")
+		$Cheese.victory()
 		print("youwin!!")
 
 func _input(event: InputEvent) -> void:
