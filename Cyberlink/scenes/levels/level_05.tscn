@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bm8646ijxc0ja" path="res://scripts/levels/base_level.gd" id="1_836dv"]
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="2_mxx4w"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_vvoq0"]
-[ext_resource type="PackedScene" path="res://scenes/props/goal.tscn" id="5_dwyms"]
+[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/goal.tscn" id="5_dwyms"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="6_6xwso"]
 [ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="7_5ke18"]
 [ext_resource type="PackedScene" uid="uid://dqyin0k0d4s76" path="res://scenes/props/gate.tscn" id="7_836dv"]
@@ -107,7 +107,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 44)
 
 [node name="Ground28" parent="." unique_id=977808492 instance=ExtResource("2_mxx4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 44)
-tile_color = 4
 
 [node name="Ground29" parent="." unique_id=1512016625 instance=ExtResource("2_mxx4w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 44)

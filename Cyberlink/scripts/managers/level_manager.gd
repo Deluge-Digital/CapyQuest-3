@@ -130,6 +130,12 @@ func _ready_level(level_number : int) -> void:
 		print("Invalid state to ready level. Currently in ", state_machine.current_state.state_name)
 		return
 	current_level = level_number
+	
+	for each in get_children():
+		each.queue_free()
+	PlayerData.player_color = color_enum.TileColor.NONE
+	GameManager._update_color()
+	
 	_load_level(level_number)
 
 func _load_level(level_number : int) -> void:
