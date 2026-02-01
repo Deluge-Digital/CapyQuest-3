@@ -90,6 +90,7 @@ func _move_forward() -> void:
 	await get_tree().physics_frame
 	
 	var front_node = detect_front()
+	var dead : bool = false
 	
 	if front_node is Ground:
 		var target_pos = sword_front.global_position - Vector3(0,9,0)
@@ -110,8 +111,22 @@ func _move_forward() -> void:
 			animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 			
 			animator.play("Walk")
+	if !front_node:
+		dead = true
+		
+		var target_pos = sword_front.global_position - Vector3(0,9,0)
+		global_position = target_pos
+		rat_sprite.global_position = sword_back.global_position - Vector3(0,9,0)
+		
+		animation_tween = get_tree().create_tween()
+		animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		
+		animator.play("Walk")
+		animator.queue("Fall")
 		
 	await get_tree().process_frame
 	is_moving = false
-	var parent : LevelManager = get_parent().get_parent()
-	parent.request_waiting_state()
+	if !dead:
+		get_parent().get_parent().request_waiting_state()
+	if dead:
+		get_parent().get_parent().request_dead_state()

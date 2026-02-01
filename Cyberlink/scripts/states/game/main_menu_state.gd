@@ -12,7 +12,7 @@ func _init(parent : StateMachine) -> void:
 	
 func enter(previous_state : State, data : Dictionary = {}) -> void:
 	super.enter(previous_state, data)
-	GameManager.camera.request_pose(Vector3(-5,5,0),Vector3(45,-90,0))
+	GameManager.camera.request_pose(GameManager.camera.global_position,Vector3(45,-90,0))
 	GameManager.clear_popup_queue()
 	GameManager.change_scene_deferred(MAIN_MENU_SCENE)
 	

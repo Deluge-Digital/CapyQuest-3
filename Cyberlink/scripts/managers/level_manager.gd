@@ -159,3 +159,11 @@ func _find_rat(level : Node) -> void:
 func request_waiting_state() -> bool:
 	var success = state_machine.transition_to(waiting_state)
 	return success
+	
+func request_dead_state() -> bool:
+	var success = state_machine.transition_to(dead_state)
+	return success
+	
+func request_win_state() -> bool:
+	var success = state_machine.transition_to(win_state)
+	return success
