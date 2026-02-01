@@ -1,6 +1,6 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bg1pmex0ysuxs"]
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b7pkipotcfsqy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjyon"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55ik6"]
 render_priority = 1
 transparency = 1
 shading_mode = 0
@@ -13,13 +13,13 @@ stencil_compare = 5
 metadata/_stencil_owned = true
 
 [resource]
-resource_name = "Yellow"
-next_pass = SubResource("StandardMaterial3D_gjyon")
+resource_name = "Cheddar"
+next_pass = SubResource("StandardMaterial3D_55ik6")
 cull_mode = 2
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0.9067233, 0.8207817, 0.3409165, 1)
-roughness = 0.9
+albedo_color = Color(0.9068526, 0.6536579, 0.13818723, 1)
+roughness = 0.5
 stencil_mode = 1
 stencil_flags = 2
 stencil_outline_thickness = 0.05
