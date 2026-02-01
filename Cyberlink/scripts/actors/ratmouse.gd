@@ -9,11 +9,15 @@ enum rat_dir {
 }
 
 var rat_direction : rat_dir = rat_dir.NEGX
+var state_machine : StateMachine
+var animation_tween: Tween
 
 @export var sword_front : RayCast3D
 @export var sword_right : RayCast3D
 @export var sword_back : RayCast3D
 @export var sword_left : RayCast3D
+@export var rat_sprite : Node3D
+@export var animator : AnimationPlayer
 
 func detect_front() -> Node:
 	if sword_front.is_colliding():
@@ -73,7 +77,24 @@ func _update_rat_direction() -> void:
 	rotation_degrees.y = (rat_direction * -90.0) + 180
 	await get_tree().process_frame
 	_move_forward()
-	
+
 func _move_forward() -> void:
+	if animation_tween && animation_tween.is_running():
+		animation_tween.kill()
+	rat_sprite.global_position = global_position
+	animator.stop()
+	
 	if detect_front() is Ground:
-		global_position = sword_front.global_position - Vector3(0,9,0)
+		
+		var target_pos = sword_front.global_position - Vector3(0,9,0)
+		global_position = target_pos
+		rat_sprite.global_position = sword_back.global_position - Vector3(0,9,0)
+		
+		animation_tween = get_tree().create_tween()
+		animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		
+		animator.play("Walk")
+		
+	await get_tree().process_frame
+	var parent : LevelManager = get_parent().get_parent()
+	parent.request_waiting_state()

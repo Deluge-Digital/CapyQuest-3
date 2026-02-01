@@ -118,7 +118,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_k70wj"]
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,13 +140,14 @@ _data = {
 &"Walk": SubResource("Animation_k70wj")
 }
 
-[node name="Ratmouse" type="Node3D" unique_id=512260425 node_paths=PackedStringArray("sword_front", "sword_right", "sword_back", "sword_left")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+[node name="Ratmouse" type="Node3D" unique_id=512260425 node_paths=PackedStringArray("sword_front", "sword_right", "sword_back", "sword_left", "rat_sprite", "animator")]
 script = ExtResource("1_jxxoo")
 sword_front = NodePath("SwordsOfRevealingLight/Front")
 sword_right = NodePath("SwordsOfRevealingLight/Right")
 sword_back = NodePath("SwordsOfRevealingLight/Back")
 sword_left = NodePath("SwordsOfRevealingLight/Left")
+rat_sprite = NodePath("Raticus")
+animator = NodePath("AnimationPlayer")
 
 [node name="Raticus" parent="." unique_id=1055582564 instance=ExtResource("1_ehad1")]
 

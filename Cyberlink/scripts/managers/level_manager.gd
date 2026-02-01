@@ -55,11 +55,11 @@ func _setup_state_machine() -> void:
 	
 func _input(event: InputEvent) -> void:
 	for each in move_inputs.keys():
-		if event.is_action_pressed(each):
+		if event.is_action_pressed(each) && state_machine.current_state == waiting_state:
 			if state_machine.transition_to(move_state):
 				active_rat._request_movement(each, active_cam_dir)
+				await get_tree().process_frame
 				camera._look_at_rat(active_cam_dir as int)
-
 
 func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:
@@ -94,3 +94,7 @@ func _find_rat(level : Node) -> void:
 			rat_instance.global_position = child.global_position
 			camera._hook_rat(rat_instance)
 			return
+
+func request_waiting_state() -> bool:
+	var success = state_machine.transition_to(waiting_state)
+	return success
