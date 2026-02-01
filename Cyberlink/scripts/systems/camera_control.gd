@@ -3,7 +3,7 @@ class_name CameraControl
 
 var move_tween
 
-enum mode {
+enum cam_dir {
 	POSX,
 	POSZ,
 	NEGX,
@@ -91,7 +91,6 @@ func get_orbit_radius() -> float:
 	return max(1.0, half_extent * orbit_radius_scale)
 	
 func look_at_rot_deg(from_pos: Vector3, to_pos: Vector3) -> Vector3:
-	print(from_pos, to_pos)
 	var deg : Vector3
 	
 	var dir = (to_pos - from_pos).normalized()
@@ -100,20 +99,20 @@ func look_at_rot_deg(from_pos: Vector3, to_pos: Vector3) -> Vector3:
 	return deg
 	
 @warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match", "shadowed_global_identifier")
-func _turn_level_camera(side : mode = 0, duration : float = -1.0, trans : Tween.TransitionType = -1, ease: Tween.EaseType = -1) -> void:
+func _turn_level_camera(side : cam_dir = 0, duration : float = -1.0, trans : Tween.TransitionType = -1, ease: Tween.EaseType = -1) -> void:
 	var center : Vector3 = get_level_center()
 	var radius : float = get_orbit_radius()
 	
 	var target_pos = center
 	
 	match side:
-		mode.POSX:
+		cam_dir.POSX:
 			target_pos.x -= radius
-		mode.POSZ:
+		cam_dir.POSZ:
 			target_pos.z -= radius
-		mode.NEGX:
+		cam_dir.NEGX:
 			target_pos.x += radius
-		mode.NEGZ:
+		cam_dir.NEGZ:
 			target_pos.z += radius
 			
 	target_pos.y = orbit_height
@@ -122,19 +121,19 @@ func _turn_level_camera(side : mode = 0, duration : float = -1.0, trans : Tween.
 	request_pose(target_pos, target_rot_deg, duration, trans, ease)
 	
 @warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match", "shadowed_global_identifier")
-func _look_at_rat(side : mode = 0, duration : float = -1.0, trans : Tween.TransitionType = -1, ease: Tween.EaseType = -1) -> void:
-	var radius : float = get_orbit_radius()
+func _look_at_rat(side : cam_dir = 0, duration : float = -1.0, trans : Tween.TransitionType = -1, ease: Tween.EaseType = -1) -> void:
+	var radius : float = get_orbit_radius() * 0.5
 	
 	var target_pos = rat.global_position
 	
 	match side:
-		mode.POSX:
+		cam_dir.POSX:
 			target_pos.x -= radius
-		mode.POSZ:
+		cam_dir.POSZ:
 			target_pos.z -= radius
-		mode.NEGX:
+		cam_dir.NEGX:
 			target_pos.x += radius
-		mode.NEGZ:
+		cam_dir.NEGZ:
 			target_pos.z += radius
 			
 	target_pos.y = rat_height
