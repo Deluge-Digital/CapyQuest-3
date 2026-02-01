@@ -1,13 +1,7 @@
 [gd_scene format=3 uid="uid://cxyk0cvaas46b"]
 
 [ext_resource type="Script" uid="uid://cbxsykoebuucj" path="res://scripts/props/ground.gd" id="1_swbi6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swbi6"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_swbi6"]
-resource_local_to_scene = true
-material = SubResource("StandardMaterial3D_swbi6")
-size = Vector3(8, 8, 8)
+[ext_resource type="PackedScene" uid="uid://df0dftuioocth" path="res://assets/models/Floor.glb" id="2_rwexe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_swbi6"]
 size = Vector3(8, 8, 8)
@@ -15,9 +9,7 @@ size = Vector3(8, 8, 8)
 [node name="Ground" type="Area3D" unique_id=2115783544]
 script = ExtResource("1_swbi6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=251444149]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.01, 0)
-mesh = SubResource("BoxMesh_swbi6")
+[node name="Floor" parent="." unique_id=1921973403 instance=ExtResource("2_rwexe")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1347971064]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
