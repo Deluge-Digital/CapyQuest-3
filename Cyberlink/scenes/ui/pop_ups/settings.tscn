@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_ioxkp"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_cpyqp"]
 [ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_cpyqp"]
+[ext_resource type="Script" uid="uid://b6tlbuvybul3o" path="res://scripts/ui/sliders.gd" id="4_sgdtv"]
 
 [sub_resource type="Animation" id="Animation_fnfel"]
 length = 0.001
@@ -124,9 +125,9 @@ text = "Music Volume"
 
 [node name="BGMSlider" type="ProgressBar" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=466410719]
 layout_mode = 2
-script = ExtResource("4_cpyqp")
+script = ExtResource("4_sgdtv")
 onHover = "uid://crwtq3dg71mj3"
-onSelect = "uid://cs0w25g1ridyl"
+onValueChange = "uid://cs0w25g1ridyl"
 
 [node name="SFX" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1090169966]
 layout_mode = 2
@@ -134,9 +135,9 @@ text = "Sound Effects Volume"
 
 [node name="SFXSlider" type="ProgressBar" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1886487661]
 layout_mode = 2
-script = ExtResource("4_cpyqp")
+script = ExtResource("4_sgdtv")
 onHover = "uid://crwtq3dg71mj3"
-onSelect = "uid://cs0w25g1ridyl"
+onValueChange = "uid://cs0w25g1ridyl"
 
 [node name="WINDOW" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1954259698]
 layout_mode = 2
