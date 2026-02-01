@@ -66,17 +66,19 @@ func _load_level(level_number : int) -> void:
 		
 	var new_level : PackedScene = load(path)
 	var new_level_instance : Node = new_level.instantiate()
-	_find_rat(new_level_instance)
 	add_child(new_level_instance)
+	_find_rat(new_level_instance)
+	camera._hook_level_size(new_level_instance)
+	camera._look_at_rat(0)
 	
 func _find_rat(level : Node) -> void:
 	var new_rat : PackedScene = load(rat_node_path)
 	var rat_instance = new_rat.instantiate()
+	level.add_child(rat_instance)
 	
 	for child in level.get_children():
 		if child is SpawnMarker:
 			print("found the rat here: ", child)
 			rat_instance.global_position = child.global_position
-
-	level.add_child(rat_instance)
-	
+			camera._hook_rat(rat_instance)
+			return
