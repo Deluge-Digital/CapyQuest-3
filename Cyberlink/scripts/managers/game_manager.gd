@@ -13,6 +13,8 @@ var state_machine : StateMachine
 @export var level_manager : LevelManager
 @export var blocker : Blocker
 
+var current_hud : Hud
+
 func _ready() -> void:
 	# Check to see if the current scene is the default. If so, kill it.
 	# This script is attached to an autoload, so it can't also be the initial
@@ -75,7 +77,14 @@ func change_scene_sync(scene : PackedScene) -> void:
 		child.queue_free()
 	
 	var new_scene = scene.instantiate()
+	if new_scene is Hud:
+		current_hud = new_scene
+		
 	scene_root.add_child(new_scene)
+
+func _request_hud_refresh() -> void:
+	if current_hud:
+		current_hud._check_masks()
 
 func _update_color() -> void:
 	if state_machine.current_state == play_state:

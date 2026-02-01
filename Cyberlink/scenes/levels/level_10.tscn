@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dmu5gy3wk7dfo"]
 
+[ext_resource type="Script" uid="uid://bm8646ijxc0ja" path="res://scripts/levels/base_level.gd" id="1_hh2oi"]
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="2_qblg5"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_7e7ni"]
 [ext_resource type="PackedScene" uid="uid://b4nnun040vehl" path="res://scenes/props/cheese.tscn" id="5_hvxp4"]
@@ -7,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="7_5db3f"]
 [ext_resource type="PackedScene" uid="uid://dqyin0k0d4s76" path="res://scenes/props/gate.tscn" id="7_hh2oi"]
 
-[node name="Level1" type="Node3D" unique_id=853865969]
+[node name="Level10" type="Node3D" unique_id=853865969]
+script = ExtResource("1_hh2oi")
 
 [node name="Ground" parent="." unique_id=140565938 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)

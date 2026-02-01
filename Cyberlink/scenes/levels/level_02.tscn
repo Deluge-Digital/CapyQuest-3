@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dpi83umapd42g"]
 
-[ext_resource type="Script" uid="uid://borvob11alhq2" path="res://scripts/levels/level_01.gd" id="1_l37oo"]
+[ext_resource type="Script" uid="uid://bm8646ijxc0ja" path="res://scripts/levels/base_level.gd" id="1_yjjx0"]
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="2_qpwj6"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_ibugp"]
-[ext_resource type="PackedScene" path="res://scenes/props/goal.tscn" id="5_3p04p"]
+[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/goal.tscn" id="5_3p04p"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="6_qpwj6"]
 
-[node name="Level1" type="Node3D" unique_id=853865969]
-script = ExtResource("1_l37oo")
+[node name="Level02" type="Node3D" unique_id=853865969]
+script = ExtResource("1_yjjx0")
 
 [node name="Cheese" parent="." unique_id=1751089781 instance=ExtResource("5_3p04p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 36)
