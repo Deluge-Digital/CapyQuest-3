@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://b3xocaok27886" path="res://assets/Cyberphont 3.0 A.ttf" id="3_1g8jr"]
 [ext_resource type="PackedScene" uid="uid://hcoi8dxa5rd1" path="res://scenes/ui/pop_ups/level_select.tscn" id="3_x2yvf"]
 [ext_resource type="PackedScene" uid="uid://b38tgajokhp56" path="res://scenes/ui/pop_ups/settings.tscn" id="4_btxxm"]
-[ext_resource type="Script" path="res://scripts/ui/buttons.gd" id="4_m1kxf"]
+[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_m1kxf"]
 [ext_resource type="PackedScene" uid="uid://dhqib8ivegwtb" path="res://scenes/ui/pop_ups/credits.tscn" id="5_wb0q5"]
 
 [sub_resource type="Animation" id="Animation_uhagc"]
