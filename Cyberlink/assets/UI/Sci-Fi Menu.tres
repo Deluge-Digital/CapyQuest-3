@@ -1,20 +1,21 @@
 [gd_resource type="Theme" format=4 uid="uid://qis5tgnaxcq8"]
 
-[ext_resource type="FontFile" uid="uid://k3ynxio5vn6l" path="res://assets/Cyberphont 3.0 A.ttf" id="1_ttuvl"]
+[ext_resource type="FontFile" uid="uid://b3xocaok27886" path="res://assets/Cyberphont 3.0 A.ttf" id="1_ttuvl"]
 [ext_resource type="StyleBox" uid="uid://lkgtlkbthw4m" path="res://assets/UI/Btn_Select.tres" id="2_2q51j"]
 [ext_resource type="StyleBox" uid="uid://bugvsjsjl6bda" path="res://assets/UI/Btn_Disable.tres" id="2_y7tp0"]
 [ext_resource type="StyleBox" uid="uid://do600stcfivk1" path="res://assets/UI/Btn_Menu.tres" id="3_a5b2c"]
-[ext_resource type="Texture2D" uid="uid://kk2tq5d5k403" path="res://assets/UI/16x16-green.png" id="4_xkith"]
-[ext_resource type="Texture2D" uid="uid://d3ohwqj1ibivy" path="res://assets/UI/16x16.png" id="5_6xdc7"]
-[ext_resource type="FontFile" uid="uid://cumegjd7k1qbn" path="res://assets/Cyberphont 3.0 B.ttf" id="6_tpm1n"]
-[ext_resource type="Texture2D" uid="uid://d1m26gciixw0e" path="res://assets/UI/arrows.png" id="7_6gmd1"]
-[ext_resource type="Texture2D" uid="uid://df8mfprxa2wc4" path="res://assets/UI/16x16 Scalable Screen.png" id="8_xwar3"]
+[ext_resource type="Texture2D" uid="uid://dbpjd4uv8jowg" path="res://assets/UI/16x16-green.png" id="4_xkith"]
+[ext_resource type="Texture2D" uid="uid://jxhi00850bjf" path="res://assets/UI/16x16.png" id="5_6xdc7"]
+[ext_resource type="FontFile" uid="uid://c26ufe2woltyf" path="res://assets/Cyberphont 3.0 B.ttf" id="6_tpm1n"]
+[ext_resource type="Texture2D" uid="uid://ugavwiy7wli" path="res://assets/UI/arrows.png" id="7_6gmd1"]
+[ext_resource type="Texture2D" uid="uid://dfi0lybjyx1oi" path="res://assets/UI/16x16 Scalable Screen.png" id="8_xwar3"]
 [ext_resource type="StyleBox" uid="uid://lxybhbfn5ilx" path="res://assets/UI/Tab.tres" id="9_35oym"]
-[ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="9_r17pk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ig2f"]
 atlas = ExtResource("7_6gmd1")
 region = Rect2(18.013, 0, 7, 7)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5wrr"]
 
 [sub_resource type="Image" id="Image_3ynyp"]
 data = {
@@ -1121,7 +1122,7 @@ OptionButton/styles/normal = null
 OptionButton/styles/normal_mirrored = null
 OptionButton/styles/pressed = null
 OptionButton/styles/pressed_mirrored = null
-Panel/styles/panel = ExtResource("9_r17pk")
+Panel/styles/panel = SubResource("StyleBoxTexture_w5wrr")
 PopupMenu/colors/font_accelerator_color = Color(0.7, 0.7, 0.7, 0.8)
 PopupMenu/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 0.8)
