@@ -7,6 +7,7 @@ var main_menu_state : MainMenuState
 
 var state_machine : StateMachine
 
+@export var camera : CameraControl
 @export var scene_root : Control
 @export var popup_queue : PopupQueue
 
@@ -26,7 +27,7 @@ func _ready() -> void:
 func _setup_state_machine() -> void:
 	var transitions : Dictionary = {
 		MainMenuState.STATE_NAME : [PlayState.STATE_NAME],
-		PlayState.STATE_NAME : [MainMenuState.STATE_NAME],
+		PlayState.STATE_NAME : [MainMenuState.STATE_NAME, PauseState.STATE_NAME],
 		PauseState.STATE_NAME : [PlayState.STATE_NAME],
 	}
 	
@@ -56,6 +57,7 @@ func request_pause() -> bool:
 func request_unpause() -> bool:
 	var success : bool = state_machine.transition_to(play_state)
 	return success
+	
 
 ## Waits one frame to let allow signals to finalize.
 func change_scene_deferred(scene : PackedScene) -> void:

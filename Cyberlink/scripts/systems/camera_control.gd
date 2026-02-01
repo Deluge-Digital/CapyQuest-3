@@ -8,9 +8,7 @@ var move_tween
 @export var default_ease : Tween.EaseType = Tween.EASE_IN_OUT
 
 @warning_ignore("int_as_enum_without_cast", "int_as_enum_without_match", "shadowed_global_identifier")
-func request_pose(target_pos : Vector3 = Vector3(9999,9999,9999), target_rot_deg : Vector3 = Vector3(9999,9999,9999), duration : float = 1.0, trans : Tween.TransitionType = -1, ease : Tween.EaseType = -1) -> void:
-	if target_pos || target_rot_deg == Vector3(9999,9999,9999):
-		return
+func request_pose(target_pos : Vector3, target_rot_deg : Vector3, duration : float = 1.0, trans : Tween.TransitionType = -1, ease : Tween.EaseType = -1) -> void:
 	if duration < 0.0:
 		duration = default_duration
 	if trans == -1:

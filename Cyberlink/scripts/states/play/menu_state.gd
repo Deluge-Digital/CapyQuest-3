@@ -11,7 +11,6 @@ func _init(parent: StateMachine) -> void:
 
 func enter(previous_state: State, data: Dictionary = {}) -> void:
 	super.enter(previous_state, data)
-	camera.request_pose(Vector3(0,0,0),Vector3(0,0,0))
 	
 	signal_menu.emit()
 

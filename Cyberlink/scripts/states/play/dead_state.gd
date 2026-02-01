@@ -1,9 +1,9 @@
-extends State
-class_name PlayState
+extends BasePlayState
+class_name DeadState
 
-const STATE_NAME : String = "PLAY_STATE"
+const STATE_NAME : String = "DEAD_STATE"
 
-signal signal_playing
+signal signal_dead
 
 func _init(parent: StateMachine) -> void:
 	state_name = STATE_NAME
@@ -11,8 +11,8 @@ func _init(parent: StateMachine) -> void:
 
 func enter(previous_state: State, data: Dictionary = {}) -> void:
 	super.enter(previous_state, data)
-	GameManager.camera.request_pose(Vector3(-5,5,0),Vector3(45,-90,0))
-	signal_playing.emit()
+	
+	signal_dead.emit()
 
 func exit(next_state: State) -> void:
 	super.exit(next_state)

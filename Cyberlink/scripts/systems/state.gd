@@ -2,6 +2,7 @@ extends RefCounted
 class_name State
 
 var state_name : String
+var camera : CameraControl
 
 var _parent : StateMachine
 
@@ -16,3 +17,6 @@ func enter(_previous_state: State, _data: Dictionary = {}) -> void:
 
 func exit(_next_state: State) -> void:
 	pass
+
+func pass_camera(camera_node : CameraControl) -> void:
+	camera = camera_node

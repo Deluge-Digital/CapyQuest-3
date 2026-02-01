@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dnu6tlcyuflnw"]
 
-[ext_resource type="Script" uid="uid://34lm3amn8vka" path="res://scripts/ui/pipestrails.gd" id="1_1iqp7"]
+[ext_resource type="Script" path="res://scripts/ui/pipestrails.gd" id="1_1iqp7"]
 [ext_resource type="Script" uid="uid://dk52d66wa0u0l" path="res://scripts/ui/blip_rects.gd" id="2_qy2i1"]
 [ext_resource type="Script" uid="uid://dqeyq33rw3cts" path="res://scripts/ui/pulse_rects.gd" id="3_dcdg6"]
 
