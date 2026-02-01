@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://osy4fvbjg8rm"]
+
+[node name="Results" type="Control" unique_id=994271296]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1154890105]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.25
+anchor_right = 0.75
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=528049266]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="RESULTS" type="Label" parent="PanelContainer/VBoxContainer" unique_id=594077068]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Game Over / Level Completed"
+horizontal_alignment = 1
+
+[node name="MOVECOUNT" type="Label" parent="PanelContainer/VBoxContainer" unique_id=885776620]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Total Moves #"
+horizontal_alignment = 1
+
+[node name="SCORELABEL" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1713366755]
+layout_mode = 2
+text = "(New High) Score"
+horizontal_alignment = 1
+
+[node name="SCORE" type="Label" parent="PanelContainer/VBoxContainer" unique_id=210762170]
+layout_mode = 2
+text = "⭐⭐⭐"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=515542317]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="RETRY" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1452438356]
+layout_mode = 2
+text = "Retry"
+
+[node name="TITLE" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1490097815]
+layout_mode = 2
+text = "Back to Title (Are you sure?)"
+
+[node name="CONTINUE" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1806373377]
+layout_mode = 2
+text = "Continue"
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=1084505603]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 4
