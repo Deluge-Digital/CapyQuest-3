@@ -4,6 +4,76 @@
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_nyp0t"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_1v4r6"]
 
+[sub_resource type="Animation" id="Animation_07god"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nyp0t"]
+resource_name = "menu_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1v4r6"]
+resource_name = "menu_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1000), Vector2(0, 48), Vector2(0, -24), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wcgmo"]
+resource_name = "menu_on"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1000), Vector2(0, 48), Vector2(0, -24), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_07god"]
+_data = {
+&"RESET": SubResource("Animation_07god"),
+&"menu_idle": SubResource("Animation_nyp0t"),
+&"menu_off": SubResource("Animation_1v4r6"),
+&"menu_on": SubResource("Animation_wcgmo")
+}
+
 [node name="Results" type="Control" unique_id=994271296]
 layout_mode = 3
 anchors_preset = 15
@@ -84,3 +154,6 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 columns = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1022213772]
+libraries/ = SubResource("AnimationLibrary_07god")

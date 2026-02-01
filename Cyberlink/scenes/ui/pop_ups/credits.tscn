@@ -4,6 +4,76 @@
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="2_s7h7v"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_tru8v"]
 
+[sub_resource type="Animation" id="Animation_s7h7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tru8v"]
+resource_name = "menu_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2ll0y"]
+resource_name = "menu_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 48), Vector2(0, -1000)]
+}
+
+[sub_resource type="Animation" id="Animation_n1c6h"]
+resource_name = "menu_on"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -1000), Vector2(0, 48), Vector2(0, -24), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mj1tb"]
+_data = {
+&"RESET": SubResource("Animation_s7h7v"),
+&"menu_idle": SubResource("Animation_tru8v"),
+&"menu_off": SubResource("Animation_2ll0y"),
+&"menu_on": SubResource("Animation_n1c6h")
+}
+
 [node name="Credits" type="Control" unique_id=1238414769]
 layout_mode = 3
 anchors_preset = 15
@@ -59,3 +129,6 @@ alignment = 1
 [node name="COOL" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer" unique_id=1443071059]
 layout_mode = 2
 text = "Good job!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=720304745]
+libraries/ = SubResource("AnimationLibrary_mj1tb")

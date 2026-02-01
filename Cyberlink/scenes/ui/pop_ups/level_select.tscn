@@ -10,6 +10,77 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 9
 corner_detail = 1
 
+[sub_resource type="Animation" id="Animation_1s7e3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_77c0q"]
+resource_name = "menu_idle"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wrjml"]
+resource_name = "menu_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(48, 0), Vector2(-2000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0c7r2"]
+resource_name = "menu_on"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2000, 0), Vector2(48, 0), Vector2(-24, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q7fnk"]
+_data = {
+&"RESET": SubResource("Animation_1s7e3"),
+&"menu_idle": SubResource("Animation_77c0q"),
+&"menu_off": SubResource("Animation_wrjml"),
+&"menu_on": SubResource("Animation_0c7r2")
+}
+
 [node name="Levels" type="Control" unique_id=206903053]
 layout_mode = 3
 anchors_preset = 15
@@ -94,3 +165,6 @@ text = "Level 11"
 [node name="L12" type="Button" parent="MarginContainer/PanelContainer/GridContainer" unique_id=401148516]
 layout_mode = 2
 text = "Level 12"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=904229265]
+libraries/ = SubResource("AnimationLibrary_q7fnk")

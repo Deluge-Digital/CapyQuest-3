@@ -4,11 +4,82 @@
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_ioxkp"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_cpyqp"]
 
+[sub_resource type="Animation" id="Animation_fnfel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ioxkp"]
+resource_name = "menu_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cpyqp"]
+resource_name = "menu_off"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-48, 0), Vector2(2000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sgdtv"]
+resource_name = "menu_on"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2000, 0), Vector2(-48, 0), Vector2(24, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnfel"]
+_data = {
+&"RESET": SubResource("Animation_fnfel"),
+&"menu_idle": SubResource("Animation_ioxkp"),
+&"menu_off": SubResource("Animation_cpyqp"),
+&"menu_on": SubResource("Animation_sgdtv")
+}
+
 [node name="Settings" type="Control" unique_id=1499328830]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 0.0009765625
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_hgto3")
@@ -87,3 +158,6 @@ text = "Confirm"
 [node name="CANCEL" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer" unique_id=141094474]
 layout_mode = 2
 text = "Cancel"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=915284947]
+libraries/ = SubResource("AnimationLibrary_fnfel")
