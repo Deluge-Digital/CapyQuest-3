@@ -13,66 +13,71 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_viu1q")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1154890105]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=886758578]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.25
-anchor_top = 0.25
-anchor_right = 0.75
-anchor_bottom = 0.75
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = ExtResource("2_nyp0t")
+theme_override_constants/margin_left = 240
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 240
+theme_override_constants/margin_bottom = 120
 
-[node name="PanelCRT" type="PanelContainer" parent="PanelContainer" unique_id=2057100760]
+[node name="PanelCRT" type="PanelContainer" parent="MarginContainer" unique_id=2057100760]
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_1v4r6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelCRT" unique_id=528049266]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelCRT" unique_id=528049266]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="RESULTS" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=594077068]
+[node name="RESULTS" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=594077068]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Game Over / Level Completed"
 horizontal_alignment = 1
 
-[node name="MOVECOUNT" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=885776620]
+[node name="MOVECOUNT" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=885776620]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Total Moves #"
 horizontal_alignment = 1
 
-[node name="SCORELABEL" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=1713366755]
+[node name="SCORELABEL" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=1713366755]
 layout_mode = 2
 text = "(New High) Score"
 horizontal_alignment = 1
 
-[node name="SCORE" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=210762170]
+[node name="SCORE" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=210762170]
 layout_mode = 2
 text = "⭐⭐⭐"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=515542317]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=515542317]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="RETRY" type="Button" parent="PanelContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1452438356]
+[node name="RETRY" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1452438356]
 layout_mode = 2
 text = "Retry"
 
-[node name="TITLE" type="Button" parent="PanelContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1490097815]
+[node name="TITLE" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1490097815]
 layout_mode = 2
 text = "Back to Title (Are you sure?)"
 
-[node name="CONTINUE" type="Button" parent="PanelContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1806373377]
+[node name="CONTINUE" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1806373377]
 layout_mode = 2
 text = "Continue"
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=1084505603]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1154890105]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_nyp0t")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer" unique_id=1084505603]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
