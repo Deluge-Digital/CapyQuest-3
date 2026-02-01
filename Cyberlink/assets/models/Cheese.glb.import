@@ -39,10 +39,15 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Yellow": {
+"Cheddar": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/materials/Yellow.tres",
-"use_external/path": "uid://bg1pmex0ysuxs"
+"use_external/fallback_path": "res://assets/materials/Cheddar.tres",
+"use_external/path": "uid://b7pkipotcfsqy"
+},
+"Wax": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/Wax.tres",
+"use_external/path": "uid://bnrlbxtrmagc1"
 }
 }
 }

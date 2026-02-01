@@ -1,13 +1,103 @@
 [gd_scene format=3 uid="uid://dqyin0k0d4s76"]
 
 [ext_resource type="Script" uid="uid://u2xn28py5abe" path="res://scripts/props/gate.gd" id="1_nm6xp"]
+[ext_resource type="PackedScene" uid="uid://bqyq4lsnscd0c" path="res://assets/models/Gate.glb" id="2_ys6ft"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_nm6xp"]
-size = Vector3(8, 8, 2)
+[sub_resource type="Animation" id="Animation_3q5bc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate2/RightDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gate2/LeftDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ys6ft"]
+resource_name = "closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate2/RightDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -3.3), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gate2/LeftDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 4.71), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nb201"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gate2/RightDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -3.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gate2/LeftDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 4.71)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3q5bc"]
+_data = {
+&"RESET": SubResource("Animation_3q5bc"),
+&"closed": SubResource("Animation_ys6ft"),
+&"open": SubResource("Animation_nb201")
+}
 
 [node name="Gate" type="Node3D" unique_id=1413678660]
 script = ExtResource("1_nm6xp")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=427680726]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
-mesh = SubResource("BoxMesh_nm6xp")
+[node name="Gate2" parent="." unique_id=1452160971 instance=ExtResource("2_ys6ft")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1681585756]
+libraries/ = SubResource("AnimationLibrary_3q5bc")
+
+[editable path="Gate2"]
