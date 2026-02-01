@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="6_6ayib"]
 [ext_resource type="PackedScene" uid="uid://dqyin0k0d4s76" path="res://scenes/props/gate.tscn" id="7_6ayib"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="7_65guy"]
-[ext_resource type="PackedScene" uid="uid://cjjoujt2wy4qk" path="res://scenes/props/lasers.tscn" id="8_p6rmu"]
+[ext_resource type="PackedScene" path="res://scenes/props/lasers.tscn" id="8_p6rmu"]
 
 [node name="Level0" type="Node3D" unique_id=996714162]
 script = ExtResource("1_bw3rj")
@@ -111,18 +111,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 44)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 28)
 
 [node name="Keycard" parent="." unique_id=809400010 instance=ExtResource("6_6ayib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 36)
 tile_color = 4
 
 [node name="Wall" parent="." unique_id=2024316484 instance=ExtResource("7_65guy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 4)
 
 [node name="Gate" parent="." unique_id=1413678660 instance=ExtResource("7_6ayib")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12, 0, 12)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20, 0, 12)
 tile_color = 4
 
 [node name="Wall2" parent="." unique_id=794496775 instance=ExtResource("7_65guy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
 
 [node name="Lasers" parent="." unique_id=1858274984 instance=ExtResource("8_p6rmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 28)
