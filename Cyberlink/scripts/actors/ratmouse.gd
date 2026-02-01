@@ -71,3 +71,9 @@ func _request_movement(event : String, cam_dir : int) -> void:
 	
 func _update_rat_direction() -> void:
 	rotation_degrees.y = (rat_direction * -90.0) + 180
+	await get_tree().process_frame
+	_move_forward()
+	
+func _move_forward() -> void:
+	if detect_front() is Ground:
+		global_position = sword_front.global_position - Vector3(0,9,0)

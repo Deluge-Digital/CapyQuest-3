@@ -58,6 +58,7 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed(each):
 			if state_machine.transition_to(move_state):
 				active_rat._request_movement(each, active_cam_dir)
+				camera._look_at_rat(active_cam_dir as int)
 
 
 func _ready_level(level_number : int) -> void:

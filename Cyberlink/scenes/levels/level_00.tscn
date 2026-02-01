@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bx40fs2i1j858"]
 
-[ext_resource type="Script" path="res://scripts/levels/level_0.gd" id="1_bw3rj"]
+[ext_resource type="Script" uid="uid://bbthto03eveyx" path="res://scripts/levels/level_00.gd" id="1_bw3rj"]
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="1_sxr8l"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="3_osc7o"]
 [ext_resource type="PackedScene" uid="uid://b4nnun040vehl" path="res://scenes/props/cheese.tscn" id="5_3mnpy"]
 [ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="6_6ayib"]
 [ext_resource type="PackedScene" uid="uid://dqyin0k0d4s76" path="res://scenes/props/gate.tscn" id="7_6ayib"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="7_65guy"]
-[ext_resource type="PackedScene" path="res://scenes/props/lasers.tscn" id="8_p6rmu"]
+[ext_resource type="PackedScene" uid="uid://cjjoujt2wy4qk" path="res://scenes/props/lasers.tscn" id="8_p6rmu"]
 
 [node name="Level0" type="Node3D" unique_id=996714162]
 script = ExtResource("1_bw3rj")

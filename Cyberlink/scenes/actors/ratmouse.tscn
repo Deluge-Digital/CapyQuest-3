@@ -159,15 +159,19 @@ libraries/ = SubResource("AnimationLibrary_4kme6")
 [node name="Front" type="RayCast3D" parent="SwordsOfRevealingLight" unique_id=930807178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 9, 0)
 target_position = Vector3(0, -10, 0)
+collide_with_areas = true
 
 [node name="Right" type="RayCast3D" parent="SwordsOfRevealingLight" unique_id=520281806]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, -8)
 target_position = Vector3(0, -10, 0)
+collide_with_areas = true
 
 [node name="Back" type="RayCast3D" parent="SwordsOfRevealingLight" unique_id=160251044]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 9, 0)
 target_position = Vector3(0, -10, 0)
+collide_with_areas = true
 
 [node name="Left" type="RayCast3D" parent="SwordsOfRevealingLight" unique_id=459844150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 8)
 target_position = Vector3(0, -10, 0)
+collide_with_areas = true
