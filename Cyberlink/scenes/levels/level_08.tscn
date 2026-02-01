@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="2_h6r4t"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_w2i51"]
 [ext_resource type="PackedScene" uid="uid://drrs8ydypxlhr" path="res://scenes/actors/ratmouse.tscn" id="4_xsrpe"]
-[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/cheese.tscn" id="5_0kxia"]
+[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/goal.tscn" id="5_0kxia"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="6_5umh1"]
 [ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="7_v7ucw"]
 

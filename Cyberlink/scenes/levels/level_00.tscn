@@ -3,17 +3,19 @@
 [ext_resource type="Script" uid="uid://bbthto03eveyx" path="res://scripts/levels/level_0.gd" id="1_bw3rj"]
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="1_sxr8l"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="3_osc7o"]
-[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/cheese.tscn" id="5_3mnpy"]
+[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/goal.tscn" id="5_3mnpy"]
 [ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="6_6ayib"]
 [ext_resource type="PackedScene" uid="uid://dqyin0k0d4s76" path="res://scenes/props/gate.tscn" id="7_6ayib"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="7_65guy"]
-[ext_resource type="PackedScene" uid="uid://c7mv3vanmncbt" path="res://assets/models/Raticus.glb" id="8_65guy"]
 [ext_resource type="PackedScene" uid="uid://cjjoujt2wy4qk" path="res://scenes/props/lasers.tscn" id="8_p6rmu"]
 
 [node name="Level0" type="Node3D" unique_id=996714162]
 script = ExtResource("1_bw3rj")
 start_pos_x = 1
 start_pos_z = 1
+
+[node name="SpawnMarker" parent="." unique_id=1902784303 instance=ExtResource("3_osc7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
 
 [node name="Ground" parent="." unique_id=140565938 instance=ExtResource("1_sxr8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
@@ -105,9 +107,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 36)
 [node name="Ground30" parent="." unique_id=277362792 instance=ExtResource("1_sxr8l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 44)
 
-[node name="SpawnMarker" parent="." unique_id=1902784303 instance=ExtResource("3_osc7o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
-
 [node name="Cheese" parent="." unique_id=1751089781 instance=ExtResource("5_3mnpy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, 28)
 
@@ -128,6 +127,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 28)
 
 [node name="Wall3" parent="." unique_id=2108096721 instance=ExtResource("7_65guy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 36)
-
-[node name="Raticus" parent="." unique_id=1766459581 instance=ExtResource("8_65guy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56958, 0, 3.56279)

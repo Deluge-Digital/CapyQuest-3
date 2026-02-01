@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cjjoujt2wy4qk"]
 
-[ext_resource type="PackedScene" uid="uid://drb0nva035nwk" path="res://assets/models/Lasers.glb" id="1_1nv5l"]
+[ext_resource type="PackedScene" uid="uid://dlsembqyy00jk" path="res://assets/models/Lasers.glb" id="1_1nv5l"]
+[ext_resource type="Script" uid="uid://b8an6r1rf5v7j" path="res://scripts/props/lasers.gd" id="2_4n4v5"]
 
 [node name="Lasers" unique_id=1858274984 instance=ExtResource("1_1nv5l")]
+script = ExtResource("2_4n4v5")

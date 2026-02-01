@@ -10,6 +10,7 @@ var state_machine : StateMachine
 @export var camera : CameraControl
 @export var scene_root : Control
 @export var popup_queue : PopupQueue
+@export var level_manager : LevelManager
 
 func _ready() -> void:
 	# Check to see if the current scene is the default. If so, kill it.

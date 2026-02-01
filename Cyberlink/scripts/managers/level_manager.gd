@@ -11,12 +11,13 @@ var dead_state : DeadState
 var state_machine : StateMachine
 
 @export var camera : CameraControl
+@export var levels_dir := "res://scenes/levels"
 
 var move_inputs : Dictionary = {
 	"ui_up" : false,
-	"up_down" : false,
+	"ui_down" : false,
 	"ui_left" : false,
-	"up_right" : false
+	"ui_right" : false
 }
 
 func _ready() -> void:
@@ -48,3 +49,18 @@ func _input(event: InputEvent) -> void:
 
 func _request_movement(direction : InputEvent):
 	pass
+
+func _ready_level(level_number : int) -> void:
+	if state_machine.current_state != menu_state:
+		print("Invalid state to ready level. Currently in ", state_machine.current_state)
+		return
+		
+	var path : String = "res://scenes/levels/level_%02d.tscn" % level_number
+	
+	if !ResourceLoader.exists(path):
+		print("Level does not exist at: ", path)
+		return
+		
+	var new_level : PackedScene = load(path)
+	var new_level_instance : Node = new_level.instantiate()
+	add_child(new_level_instance)
