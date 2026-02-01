@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="2_6761a"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="4_50wog"]
-[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/goal.tscn" id="5_oc4kc"]
-[ext_resource type="PackedScene" uid="uid://c6ymn17keqt0p" path="res://scenes/props/keycard.tscn" id="6_50wog"]
+[ext_resource type="PackedScene" path="res://scenes/props/goal.tscn" id="5_oc4kc"]
 
 [node name="Level1" type="Node3D" unique_id=853865969]
 script = ExtResource("1_ksju7")
@@ -15,10 +14,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
 
 [node name="Cheese" parent="." unique_id=1751089781 instance=ExtResource("5_oc4kc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 36)
-
-[node name="Keycard" parent="." unique_id=1391412373 instance=ExtResource("6_50wog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 16)
-tile_color = 2
 
 [node name="Ground" parent="." unique_id=140565938 instance=ExtResource("2_6761a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
