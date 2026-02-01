@@ -43,8 +43,6 @@ func set_color():
 			mesh_instance_3d.mesh.surface_set_material(0, material)
 		material.albedo_color = Color(0.983, 1.0, 0.0, 1.0)
 
-func get_color() -> color_enum.TileColor:
-	return tile_color
 
 func _ready() -> void:
 	set_color()

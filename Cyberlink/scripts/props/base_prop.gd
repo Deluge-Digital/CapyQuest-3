@@ -8,3 +8,6 @@ func _update_visibility() -> void:
 		self.visible = false
 	else:
 		self.visible = true
+
+func get_color() -> color_enum.TileColor:
+	return tile_color
