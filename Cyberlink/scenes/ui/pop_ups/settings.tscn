@@ -2,9 +2,10 @@
 
 [ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_hgto3"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_ioxkp"]
+[ext_resource type="Script" uid="uid://dxvwrs8d3phen" path="res://scripts/ui/pop_ups/settings.gd" id="2_sgdtv"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_cpyqp"]
 [ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_cpyqp"]
-[ext_resource type="Script" uid="uid://b6tlbuvybul3o" path="res://scripts/ui/sliders.gd" id="4_sgdtv"]
+[ext_resource type="Script" path="res://scripts/ui/sliders.gd" id="4_sgdtv"]
 
 [sub_resource type="Animation" id="Animation_fnfel"]
 length = 0.001
@@ -76,7 +77,7 @@ _data = {
 &"menu_on": SubResource("Animation_sgdtv")
 }
 
-[node name="Settings" type="Control" unique_id=1499328830]
+[node name="Settings" type="Control" unique_id=1499328830 node_paths=PackedStringArray("animator")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,6 +86,8 @@ offset_right = 0.0009765625
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_hgto3")
+script = ExtResource("2_sgdtv")
+animator = NodePath("AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1993543258]
 layout_mode = 1
@@ -190,7 +193,9 @@ libraries/ = SubResource("AnimationLibrary_fnfel")
 [connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" method="_on_pressed"]
 [connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" method="_on_pressed"]
 [connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" method="_on_pressed"]

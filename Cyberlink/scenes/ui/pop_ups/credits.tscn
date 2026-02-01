@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://blicsn160k6fs" path="res://scripts/ui/pop_ups/credits.gd" id="2_2ll0y"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="2_s7h7v"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_tru8v"]
-[ext_resource type="Script" path="res://scripts/ui/buttons.gd" id="4_tru8v"]
+[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_tru8v"]
 
 [sub_resource type="Animation" id="Animation_s7h7v"]
 length = 0.001
@@ -76,7 +76,7 @@ _data = {
 &"menu_on": SubResource("Animation_n1c6h")
 }
 
-[node name="Credits" type="Control" unique_id=1238414769]
+[node name="Credits" type="Control" unique_id=1238414769 node_paths=PackedStringArray("animator")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,6 +85,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ypqqm")
 script = ExtResource("2_2ll0y")
+animator = NodePath("AnimationPlayer")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1828938762]
 layout_mode = 1
@@ -141,4 +142,5 @@ libraries/ = SubResource("AnimationLibrary_mj1tb")
 
 [connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" to="." method="_on_cool_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/COOL" method="_on_pressed"]
