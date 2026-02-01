@@ -99,10 +99,10 @@ size = Vector3(8, 8, 8)
 [node name="Gate" type="Area3D" unique_id=1942757170]
 script = ExtResource("1_nm6xp")
 
-[node name="Gate2" parent="." unique_id=1452160971 instance=ExtResource("2_ys6ft")]
+[node name="Gate2" parent="." unique_id=1638681095 instance=ExtResource("2_ys6ft")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
-[node name="RightDoor" parent="Gate2" index="1" unique_id=1830364698]
+[node name="RightDoor" parent="Gate2" index="1" unique_id=512622437]
 surface_material_override/0 = SubResource("StandardMaterial3D_ys6ft")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1681585756]
