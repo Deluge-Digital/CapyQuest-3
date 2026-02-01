@@ -117,11 +117,16 @@ func _update_camera() -> void:
 	
 
 func _reset_level() -> void:
+	for each in get_children():
+		each.queue_free()
+	PlayerData.player_color = color_enum.TileColor.NONE
+	GameManager._update_color()
+	
 	_load_level(current_level)
 
 func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:
-		print("Invalid state to ready level. Currently in ", state_machine.current_state)
+		print("Invalid state to ready level. Currently in ", state_machine.current_state.state_name)
 		return
 	current_level = level_number
 	_load_level(level_number)
@@ -166,4 +171,8 @@ func request_dead_state() -> bool:
 	
 func request_win_state() -> bool:
 	var success = state_machine.transition_to(win_state)
+	return success
+
+func request_menu_state() -> bool:
+	var success = state_machine.transition_to(menu_state)
 	return success
