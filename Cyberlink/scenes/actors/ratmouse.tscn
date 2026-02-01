@@ -82,6 +82,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.75, 0.75, 0.75)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Raticus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_4kme6"]
 length = 2.0
@@ -154,6 +166,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Raticus:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ehad1"]
 resource_name = "Silly Flip Backflip"
@@ -197,7 +221,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_k70wj"]
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -221,6 +244,15 @@ _data = {
 &"Silly Flip Backflip": SubResource("Animation_ehad1"),
 &"Walk": SubResource("Animation_k70wj")
 }
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxxoo"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_4kme6"]
+material = SubResource("StandardMaterial3D_jxxoo")
+inner_radius = 3.0
+outer_radius = 3.5
+ring_segments = 3
 
 [node name="Ratmouse" type="Node3D" unique_id=512260425 node_paths=PackedStringArray("sword_front", "sword_right", "sword_back", "sword_left", "rat_sprite", "animator")]
 script = ExtResource("1_jxxoo")
@@ -257,3 +289,6 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 8)
 target_position = Vector3(0, -10, 0)
 collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2099768266]
+mesh = SubResource("TorusMesh_4kme6")

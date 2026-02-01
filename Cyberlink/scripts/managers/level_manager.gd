@@ -70,18 +70,19 @@ func _input(event: InputEvent) -> void:
 		_turn_camera_right()
 	if event.is_action_pressed("camera_mode"):
 		_change_rat_cam()
-	if event.is_action_pressed("equip_red"):
-		if PlayerData.get_mask_inventory() & color_enum.TileColor.RED:
-			PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.RED) as color_enum.TileColor
-			GameManager._update_color()
-	if event.is_action_pressed("equip_green"):
-		if PlayerData.get_mask_inventory() & color_enum.TileColor.GREEN:
-			PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.GREEN) as color_enum.TileColor
-			GameManager._update_color()
-	if event.is_action_pressed("equip_blue"):
-		if PlayerData.get_mask_inventory() & color_enum.TileColor.BLUE:
-			PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.BLUE) as color_enum.TileColor
-			GameManager._update_color()
+	if state_machine.current_state == waiting_state:
+		if event.is_action_pressed("equip_red"):
+			if PlayerData.get_mask_inventory() & color_enum.TileColor.RED:
+				PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.RED) as color_enum.TileColor
+				GameManager._update_color()
+		if event.is_action_pressed("equip_green"):
+			if PlayerData.get_mask_inventory() & color_enum.TileColor.GREEN:
+				PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.GREEN) as color_enum.TileColor
+				GameManager._update_color()
+		if event.is_action_pressed("equip_blue"):
+			if PlayerData.get_mask_inventory() & color_enum.TileColor.BLUE:
+				PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.BLUE) as color_enum.TileColor
+				GameManager._update_color()
 
 func _refresh_level() -> void:
 	if current_level_node:
@@ -117,11 +118,16 @@ func _update_camera() -> void:
 	
 
 func _reset_level() -> void:
+	for each in get_children():
+		each.queue_free()
+	PlayerData.player_color = color_enum.TileColor.NONE
+	GameManager._update_color()
+	
 	_load_level(current_level)
 
 func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:
-		print("Invalid state to ready level. Currently in ", state_machine.current_state)
+		print("Invalid state to ready level. Currently in ", state_machine.current_state.state_name)
 		return
 	current_level = level_number
 	_load_level(level_number)
@@ -158,4 +164,16 @@ func _find_rat(level : Node) -> void:
 
 func request_waiting_state() -> bool:
 	var success = state_machine.transition_to(waiting_state)
+	return success
+	
+func request_dead_state() -> bool:
+	var success = state_machine.transition_to(dead_state)
+	return success
+	
+func request_win_state() -> bool:
+	var success = state_machine.transition_to(win_state)
+	return success
+
+func request_menu_state() -> bool:
+	var success = state_machine.transition_to(menu_state)
 	return success

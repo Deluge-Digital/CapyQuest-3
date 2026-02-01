@@ -10,6 +10,7 @@
 
 [node name="Level10" type="Node3D" unique_id=853865969]
 script = ExtResource("1_hh2oi")
+starting_masks = 7
 
 [node name="Ground" parent="." unique_id=140565938 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)

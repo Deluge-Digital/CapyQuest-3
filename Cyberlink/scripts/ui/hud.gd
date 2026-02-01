@@ -33,7 +33,8 @@ func _on_blue_pressed():
 
 
 func _on_menu_pressed():
-	GameManager.request_main_menu()
+	if GameManager.level_manager.request_menu_state():
+		GameManager.request_main_menu()
 
 
 func _on_retry_pressed():
