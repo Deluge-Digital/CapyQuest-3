@@ -8,9 +8,16 @@ resource_local_to_scene = true
 material = ExtResource("2_e6dnx")
 size = Vector3(8, 8, 8)
 
-[node name="Wall" type="Node3D" unique_id=2024316484]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6dnx"]
+size = Vector3(8, 8, 8)
+
+[node name="Wall" type="Area3D" unique_id=1563279206]
 script = ExtResource("1_viio0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=433954082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 mesh = SubResource("BoxMesh_viio0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1830173518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_e6dnx")

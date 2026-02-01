@@ -5,9 +5,16 @@
 [sub_resource type="BoxMesh" id="BoxMesh_swbi6"]
 size = Vector3(8, 8, 8)
 
-[node name="Ground" type="Node3D" unique_id=140565938]
+[sub_resource type="BoxShape3D" id="BoxShape3D_swbi6"]
+size = Vector3(8, 8, 8)
+
+[node name="Ground" type="Area3D" unique_id=2115783544]
 script = ExtResource("1_swbi6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=251444149]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.01, 0)
 mesh = SubResource("BoxMesh_swbi6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1347971064]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+shape = SubResource("BoxShape3D_swbi6")

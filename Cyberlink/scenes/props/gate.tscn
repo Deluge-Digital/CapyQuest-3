@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqyin0k0d4s76"]
 
 [ext_resource type="Script" uid="uid://u2xn28py5abe" path="res://scripts/props/gate.gd" id="1_nm6xp"]
-[ext_resource type="PackedScene" uid="uid://bqyq4lsnscd0c" path="res://assets/models/Gate.glb" id="2_ys6ft"]
+[ext_resource type="PackedScene" uid="uid://ysypkw5r711y" path="res://assets/models/Gate.glb" id="2_ys6ft"]
 
 [sub_resource type="Animation" id="Animation_3q5bc"]
 length = 0.001
@@ -91,7 +91,10 @@ _data = {
 &"open": SubResource("Animation_nb201")
 }
 
-[node name="Gate" type="Node3D" unique_id=1413678660]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ys6ft"]
+size = Vector3(8, 8, 8)
+
+[node name="Gate" type="Area3D" unique_id=1942757170]
 script = ExtResource("1_nm6xp")
 
 [node name="Gate2" parent="." unique_id=1452160971 instance=ExtResource("2_ys6ft")]
@@ -99,5 +102,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1681585756]
 libraries/ = SubResource("AnimationLibrary_3q5bc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=896347022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_ys6ft")
 
 [editable path="Gate2"]

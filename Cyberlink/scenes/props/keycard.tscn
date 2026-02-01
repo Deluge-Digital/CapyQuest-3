@@ -114,7 +114,10 @@ _data = {
 &"obtain": SubResource("Animation_16nhr")
 }
 
-[node name="Keycard" type="Node3D" unique_id=809400010]
+[sub_resource type="BoxShape3D" id="BoxShape3D_16nhr"]
+size = Vector3(8, 8, 8)
+
+[node name="Keycard" type="Area3D" unique_id=1391412373]
 script = ExtResource("1_16nhr")
 
 [node name="Keycard2" parent="." unique_id=1178490402 instance=ExtResource("1_f8g3d")]
@@ -122,3 +125,7 @@ transform = Transform3D(0.7071067, -0.51291704, -0.4867401, 0, 0.6883545, -0.725
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1408583976]
 libraries/ = SubResource("AnimationLibrary_goqc5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=742679797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_16nhr")

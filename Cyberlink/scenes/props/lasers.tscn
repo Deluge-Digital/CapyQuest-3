@@ -3,5 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dlsembqyy00jk" path="res://assets/models/Lasers.glb" id="1_1nv5l"]
 [ext_resource type="Script" uid="uid://b8an6r1rf5v7j" path="res://scripts/props/lasers.gd" id="2_4n4v5"]
 
-[node name="Lasers" unique_id=1858274984 instance=ExtResource("1_1nv5l")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_4n4v5"]
+size = Vector3(8, 8, 8)
+
+[node name="Lasers" type="Area3D" unique_id=1655013707]
 script = ExtResource("2_4n4v5")
+
+[node name="Lasers2" parent="." unique_id=307045398 instance=ExtResource("1_1nv5l")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1218562516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_4n4v5")
