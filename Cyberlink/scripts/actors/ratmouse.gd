@@ -107,7 +107,7 @@ func _move_forward() -> void:
 			animator.play("Walk")
 			
 	if front_node is Wall:
-		if PlayerData.get_player_color() & front_node.get_color():
+		if PlayerData.get_player_color() == front_node.get_color():
 			var target_pos = sword_front.global_position - Vector3(0,9,0)
 			global_position = target_pos
 			rat_sprite.global_position = sword_back.global_position - Vector3(0,9,0)
