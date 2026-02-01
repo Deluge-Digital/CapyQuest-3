@@ -2,6 +2,19 @@
 
 [ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_jo8l1"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_6hj5w"]
+[ext_resource type="Texture2D" uid="uid://p15xefxgoa2n" path="res://assets/UI/UW.png" id="3_mqv4c"]
+[ext_resource type="Texture2D" uid="uid://bmujxy8v2rye3" path="res://assets/UI/UG.png" id="4_mn5ks"]
+[ext_resource type="Texture2D" uid="uid://bovsoedlsnwps" path="res://assets/UI/UB.png" id="5_gihfi"]
+[ext_resource type="Texture2D" uid="uid://bpirhq8btrs3h" path="res://assets/UI/PW.png" id="6_0iudi"]
+[ext_resource type="Texture2D" uid="uid://ic48ec3v14od" path="res://assets/UI/PG.png" id="7_dfnx7"]
+[ext_resource type="Texture2D" uid="uid://dejgprc3pp6v4" path="res://assets/UI/RW.png" id="7_sgkp3"]
+[ext_resource type="Texture2D" uid="uid://dq3l5uij7omyi" path="res://assets/UI/CTW.png" id="8_dfnx7"]
+[ext_resource type="Texture2D" uid="uid://xnu3bvejv2lk" path="res://assets/UI/PB.png" id="8_xbua1"]
+[ext_resource type="Texture2D" uid="uid://dr7qfwij401hp" path="res://assets/UI/RG.png" id="10_x28io"]
+[ext_resource type="Texture2D" uid="uid://bngn3x4snw8g4" path="res://assets/UI/RB.png" id="11_iwvkj"]
+[ext_resource type="Texture2D" uid="uid://c873ap8mjemeo" path="res://assets/UI/EW.png" id="13_a58ev"]
+[ext_resource type="Texture2D" uid="uid://ec8c0304a0ke" path="res://assets/UI/EG.png" id="14_t5gps"]
+[ext_resource type="Texture2D" uid="uid://7t8cbqacjq6e" path="res://assets/UI/EB.png" id="15_17lgj"]
 
 [node name="Hud" type="Control" unique_id=853124198]
 layout_mode = 3
@@ -32,6 +45,7 @@ theme_override_constants/margin_bottom = 12
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TOPLEFT/MarginContainer" unique_id=2052052956]
 layout_mode = 2
+alignment = 1
 
 [node name="NAME" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1816416817]
 layout_mode = 2
@@ -41,9 +55,13 @@ text = "Level Name"
 layout_mode = 2
 text = "Move counter"
 
-[node name="UNDO" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=65120874]
+[node name="UNDO" type="TextureButton" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1870594433]
 layout_mode = 2
-text = "Undo"
+texture_normal = ExtResource("3_mqv4c")
+texture_pressed = ExtResource("4_mn5ks")
+texture_hover = ExtResource("5_gihfi")
+texture_disabled = ExtResource("3_mqv4c")
+texture_focused = ExtResource("5_gihfi")
 
 [node name="TOPRIGHT" type="PanelContainer" parent="." unique_id=1619556024]
 layout_mode = 1
@@ -55,31 +73,39 @@ anchor_bottom = 0.01
 grow_horizontal = 0
 theme_override_styles/panel = ExtResource("2_6hj5w")
 
-[node name="MarginContainer" type="MarginContainer" parent="TOPRIGHT" unique_id=2111040600]
+[node name="VBoxContainer" type="GridContainer" parent="TOPRIGHT" unique_id=641730311]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 9
+columns = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TOPRIGHT/MarginContainer" unique_id=362754844]
+[node name="MENU" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1694134699]
 layout_mode = 2
+texture_normal = ExtResource("6_0iudi")
+texture_pressed = ExtResource("7_dfnx7")
+texture_hover = ExtResource("8_xbua1")
+texture_disabled = ExtResource("6_0iudi")
+texture_focused = ExtResource("8_xbua1")
 
-[node name="MENU" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=1591276065]
+[node name="RETRY" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=735530130]
 layout_mode = 2
-text = "Pause/Menu"
+texture_normal = ExtResource("7_sgkp3")
+texture_pressed = ExtResource("10_x28io")
+texture_hover = ExtResource("11_iwvkj")
+texture_disabled = ExtResource("7_sgkp3")
+texture_focused = ExtResource("11_iwvkj")
 
-[node name="RETRY" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=1508884956]
+[node name="ROTATE" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1838048178]
 layout_mode = 2
-text = "Restart"
+texture_normal = ExtResource("8_dfnx7")
 
-[node name="ROTATE" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=1284758067]
+[node name="VIEW" type="TextureButton" parent="TOPRIGHT/VBoxContainer" unique_id=1331249508]
 layout_mode = 2
-text = "Turn camera"
-
-[node name="VIEW" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=493884413]
-layout_mode = 2
-text = "Toggle camera"
+texture_normal = ExtResource("13_a58ev")
+texture_pressed = ExtResource("14_t5gps")
+texture_hover = ExtResource("15_17lgj")
+texture_disabled = ExtResource("13_a58ev")
+texture_focused = ExtResource("15_17lgj")
 
 [node name="BOTTOMLEFT" type="PanelContainer" parent="." unique_id=773765991]
 layout_mode = 1
