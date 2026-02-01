@@ -91,6 +91,7 @@ func _move_forward() -> void:
 	
 	var front_node = detect_front()
 	var dead : bool = false
+	var win : bool = false
 	
 	if front_node is Ground:
 		if PlayerData.get_player_color() & front_node.get_color():
@@ -104,6 +105,7 @@ func _move_forward() -> void:
 			animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 			
 			animator.play("Walk")
+			
 	if front_node is Wall:
 		if PlayerData.get_player_color() & front_node.get_color():
 			var target_pos = sword_front.global_position - Vector3(0,9,0)
@@ -114,6 +116,20 @@ func _move_forward() -> void:
 			animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 			
 			animator.play("Walk")
+			
+	if front_node is Goal:
+		win = true
+		var target_pos = sword_front.global_position - Vector3(0,9,0)
+		global_position = target_pos
+		rat_sprite.global_position = sword_back.global_position - Vector3(0,9,0)
+		
+		animation_tween = get_tree().create_tween()
+		animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		
+		animator.play("Walk")
+		front_node.queue_free()
+		animator.queue("Backflip")
+		
 	if !front_node:
 		dead = true
 		
@@ -129,7 +145,9 @@ func _move_forward() -> void:
 		
 	await get_tree().process_frame
 	is_moving = false
-	if !dead:
+	if !dead && !win:
 		get_parent().get_parent().request_waiting_state()
 	if dead:
 		get_parent().get_parent().request_dead_state()
+	if win:
+		get_parent().get_parent().request_win_state()

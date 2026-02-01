@@ -39,8 +39,6 @@ environment = SubResource("Environment_q8mjp")
 [node name="LevelManager" type="Node3D" parent="." unique_id=1640850077 node_paths=PackedStringArray("camera")]
 script = ExtResource("2_oo155")
 camera = NodePath("../Camera3D")
-levels_dir = null
-rat_node_path = null
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=21155025]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)

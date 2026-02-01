@@ -245,6 +245,15 @@ _data = {
 &"Walk": SubResource("Animation_k70wj")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxxoo"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_4kme6"]
+material = SubResource("StandardMaterial3D_jxxoo")
+inner_radius = 3.0
+outer_radius = 3.5
+ring_segments = 3
+
 [node name="Ratmouse" type="Node3D" unique_id=512260425 node_paths=PackedStringArray("sword_front", "sword_right", "sword_back", "sword_left", "rat_sprite", "animator")]
 script = ExtResource("1_jxxoo")
 sword_front = NodePath("SwordsOfRevealingLight/Front")
@@ -280,3 +289,6 @@ collide_with_areas = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 8)
 target_position = Vector3(0, -10, 0)
 collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2099768266]
+mesh = SubResource("TorusMesh_4kme6")
