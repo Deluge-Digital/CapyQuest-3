@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://b38tgajokhp56"]
 
+[ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_hgto3"]
+[ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_ioxkp"]
+[ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_cpyqp"]
+
 [node name="Settings" type="Control" unique_id=1499328830]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_hgto3")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=224914913]
 layout_mode = 1
@@ -17,13 +22,18 @@ anchor_right = 0.75
 anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_ioxkp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1660598681]
+[node name="PanelCRT" type="PanelContainer" parent="PanelContainer" unique_id=810939729]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_cpyqp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelCRT" unique_id=1660598681]
 layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer" unique_id=946196135]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=946196135]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -31,25 +41,25 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="BGM" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1556367821]
+[node name="BGM" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1556367821]
 layout_mode = 2
 text = "Music Volume"
 
-[node name="BGMSlider" type="HSlider" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1017229944]
+[node name="BGMSlider" type="ProgressBar" parent="PanelContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=466410719]
 layout_mode = 2
 
-[node name="SFX" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1090169966]
+[node name="SFX" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1090169966]
 layout_mode = 2
 text = "Sound Effects Volume"
 
-[node name="SFXSlider" type="HSlider" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=559645948]
+[node name="SFXSlider" type="ProgressBar" parent="PanelContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1886487661]
 layout_mode = 2
 
-[node name="WINDOW" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1954259698]
+[node name="WINDOW" type="Label" parent="PanelContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1954259698]
 layout_mode = 2
 text = "Window Mode"
 
-[node name="WindowButton" type="OptionButton" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=751875053]
+[node name="WindowButton" type="OptionButton" parent="PanelContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=751875053]
 layout_mode = 2
 selected = 0
 item_count = 3
@@ -60,15 +70,15 @@ popup/item_1/id = 1
 popup/item_2/text = "Fullscreen"
 popup/item_2/id = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=607653172]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/PanelCRT/VBoxContainer" unique_id=607653172]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="CONFIRM" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1270137856]
+[node name="CONFIRM" type="Button" parent="PanelContainer/PanelCRT/VBoxContainer/HBoxContainer" unique_id=1270137856]
 layout_mode = 2
 text = "Confirm"
 
-[node name="CANCEL" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=141094474]
+[node name="CANCEL" type="Button" parent="PanelContainer/PanelCRT/VBoxContainer/HBoxContainer" unique_id=141094474]
 layout_mode = 2
 text = "Cancel"

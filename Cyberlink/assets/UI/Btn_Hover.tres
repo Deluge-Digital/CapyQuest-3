@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bmd70liiwrd7y"]
+
+[ext_resource type="Texture2D" uid="uid://yyyr8eohwvx2" path="res://Resources/UI/scalable_button_hover.png" id="1_q6yqf"]
+
+[resource]
+texture = ExtResource("1_q6yqf")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 3.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0

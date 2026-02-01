@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://cg103dgtdn5ka"]
+
+[ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_jo8l1"]
+[ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_6hj5w"]
+
+[node name="Hud" type="Control" unique_id=853124198]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jo8l1")
+
+[node name="TOPLEFT" type="PanelContainer" parent="." unique_id=1825344481]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.01
+anchor_right = 0.01
+anchor_bottom = 0.01
+offset_right = 131.0
+offset_bottom = 101.0
+theme_override_styles/panel = ExtResource("2_6hj5w")
+
+[node name="MarginContainer" type="MarginContainer" parent="TOPLEFT" unique_id=1581512858]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TOPLEFT/MarginContainer" unique_id=2052052956]
+layout_mode = 2
+
+[node name="NAME" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1816416817]
+layout_mode = 2
+text = "Level Name"
+
+[node name="MOVES" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=1473243748]
+layout_mode = 2
+text = "Move counter"
+
+[node name="UNDO" type="Label" parent="TOPLEFT/MarginContainer/VBoxContainer" unique_id=65120874]
+layout_mode = 2
+text = "Undo"
+
+[node name="TOPRIGHT" type="PanelContainer" parent="." unique_id=1619556024]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.01
+anchor_right = 0.99
+anchor_bottom = 0.01
+grow_horizontal = 0
+theme_override_styles/panel = ExtResource("2_6hj5w")
+
+[node name="MarginContainer" type="MarginContainer" parent="TOPRIGHT" unique_id=2111040600]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TOPRIGHT/MarginContainer" unique_id=362754844]
+layout_mode = 2
+
+[node name="MENU" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=1591276065]
+layout_mode = 2
+text = "Pause/Menu"
+
+[node name="RETRY" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=1508884956]
+layout_mode = 2
+text = "Restart"
+
+[node name="ROTATE" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=1284758067]
+layout_mode = 2
+text = "Turn camera"
+
+[node name="VIEW" type="Label" parent="TOPRIGHT/MarginContainer/VBoxContainer" unique_id=493884413]
+layout_mode = 2
+text = "Toggle camera"
+
+[node name="BOTTOMLEFT" type="PanelContainer" parent="." unique_id=773765991]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.99
+anchor_right = 0.01
+anchor_bottom = 0.99
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("2_6hj5w")
+
+[node name="MarginContainer" type="MarginContainer" parent="BOTTOMLEFT" unique_id=1339643837]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ITEMS" type="Label" parent="BOTTOMLEFT/MarginContainer" unique_id=882696242]
+layout_mode = 2
+text = "Inventory?"
+
+[node name="BOTTOMRIGHT" type="PanelContainer" parent="." unique_id=1692960495]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.99
+anchor_right = 0.99
+anchor_bottom = 0.99
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("2_6hj5w")
+
+[node name="MarginContainer" type="MarginContainer" parent="BOTTOMRIGHT" unique_id=1050102311]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BOTTOMRIGHT/MarginContainer" unique_id=910675166]
+layout_mode = 2
+
+[node name="RED" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=2032232331]
+layout_mode = 2
+text = "Red"
+
+[node name="GREEN" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1963140193]
+layout_mode = 2
+text = "Green"
+
+[node name="BLUE" type="Button" parent="BOTTOMRIGHT/MarginContainer/HBoxContainer" unique_id=1397645864]
+layout_mode = 2
+text = "Blue"

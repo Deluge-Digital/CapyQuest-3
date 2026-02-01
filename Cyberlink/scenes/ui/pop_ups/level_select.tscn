@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://hcoi8dxa5rd1"]
 
+[ext_resource type="Theme" uid="uid://qis5tgnaxcq8" path="res://assets/UI/Sci-Fi Menu.tres" id="1_ndgdd"]
+[ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_1s7e3"]
+
 [node name="Levels" type="Control" unique_id=206903053]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ndgdd")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1159137217]
 layout_mode = 1
@@ -17,6 +21,7 @@ anchor_right = 0.75
 anchor_bottom = 0.75
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_1s7e3")
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer" unique_id=873381284]
 layout_mode = 2
