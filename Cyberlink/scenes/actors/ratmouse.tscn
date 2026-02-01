@@ -22,13 +22,65 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Raticus:rotation")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, -3.1415927), Vector3(0, 0, -4.712389), Vector3(0, 0, -6.2831855)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Raticus:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7h2s7"]
+resource_name = "Fall"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Raticus:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -12, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Raticus:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.9, 1, 1.4, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0.41887903), Vector3(0, 0, 0.41887903), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, -1.0471976), Vector3(0, 130.89969, -1.0471976)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Raticus:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.75, 0.75, 0.75)]
 }
 
 [sub_resource type="Animation" id="Animation_4kme6"]
@@ -106,7 +158,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_ehad1"]
 resource_name = "Silly Flip Backflip"
 length = 2.0
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -114,10 +165,10 @@ tracks/0/path = NodePath("Raticus:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 0.364, 1.315), Vector3(1, 0.667, 0.75), Vector3(1, 0.364, 1.315)]
+"values": [Vector3(1, 1, 1), Vector3(1, 0.667, 0.75), Vector3(1, 0.364, 1.315), Vector3(1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -126,10 +177,10 @@ tracks/1/path = NodePath("Raticus:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2666668),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.6, 1.2666668, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0.041192055, -2.3841858e-07, -0.118888855), Vector3(-7.431738, 4.712203, -0.1188879), Vector3(0, 9.503658, 0)]
+"values": [Vector3(0, 0, 0), Vector3(-7.431738, 4.712203, -0.1188879), Vector3(0, 9.503658, 0), Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -138,14 +189,15 @@ tracks/2/path = NodePath("Raticus:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2666668, 1.6000001),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.6, 1.2666668, 1.6000001, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, 3.1415927), Vector3(0, 0, -1.7749999)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5707964), Vector3(0, 0, 3.1415927), Vector3(0, 0, -1.7749999), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_k70wj"]
 length = 2.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -162,6 +214,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4kme6"]
 _data = {
 &"Backflip": SubResource("Animation_so38d"),
+&"Fall": SubResource("Animation_7h2s7"),
 &"Idle": SubResource("Animation_4kme6"),
 &"Jump": SubResource("Animation_ne848"),
 &"RESET": SubResource("Animation_jxxoo"),
