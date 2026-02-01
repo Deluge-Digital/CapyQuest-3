@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://qis5tgnaxcq8" path="res://assets/UI/Sci-Fi Menu.tres" id="1_fe2o3"]
 [ext_resource type="Script" uid="uid://bku3a4cyty86s" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
+[ext_resource type="FontFile" uid="uid://b3xocaok27886" path="res://assets/Cyberphont 3.0 A.ttf" id="3_1g8jr"]
 
 [node name="MainMenu" type="Control" unique_id=2116475503]
 layout_mode = 3
@@ -28,6 +29,7 @@ theme_override_constants/margin_bottom = 20
 [node name="NAME" type="Label" parent="VBoxContainer/TITLE" unique_id=2102041248]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("3_1g8jr")
 theme_override_font_sizes/font_size = 74
 text = "Cyberlink"
 horizontal_alignment = 1
