@@ -11,3 +11,6 @@ func _on_mouse_entered():
 
 func _on_pressed():
 	GlobalSoundmanager.playSFX(onSelect)
+
+func _on_value_changed():
+	GlobalSoundmanager.playSFX(_on_value_changed())

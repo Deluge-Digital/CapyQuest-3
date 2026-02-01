@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_hgto3"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_ioxkp"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_cpyqp"]
+[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_cpyqp"]
 
 [sub_resource type="Animation" id="Animation_fnfel"]
 length = 0.001
@@ -123,6 +124,9 @@ text = "Music Volume"
 
 [node name="BGMSlider" type="ProgressBar" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=466410719]
 layout_mode = 2
+script = ExtResource("4_cpyqp")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
 [node name="SFX" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1090169966]
 layout_mode = 2
@@ -130,6 +134,9 @@ text = "Sound Effects Volume"
 
 [node name="SFXSlider" type="ProgressBar" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1886487661]
 layout_mode = 2
+script = ExtResource("4_cpyqp")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
 [node name="WINDOW" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer/GridContainer" unique_id=1954259698]
 layout_mode = 2
@@ -145,6 +152,9 @@ popup/item_1/text = "Borderless"
 popup/item_1/id = 1
 popup/item_2/text = "Fullscreen"
 popup/item_2/id = 2
+script = ExtResource("4_cpyqp")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=607653172]
 layout_mode = 2
@@ -154,10 +164,32 @@ alignment = 1
 [node name="CONFIRM" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer" unique_id=1270137856]
 layout_mode = 2
 text = "Confirm"
+script = ExtResource("4_cpyqp")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
 [node name="CANCEL" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer" unique_id=141094474]
 layout_mode = 2
 text = "Cancel"
+script = ExtResource("4_cpyqp")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=915284947]
 libraries/ = SubResource("AnimationLibrary_fnfel")
+
+[connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/BGMSlider" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/BGMSlider" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/BGMSlider" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/BGMSlider" method="_on_mouse_entered"]
+[connection signal="value_changed" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/BGMSlider" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/BGMSlider" method="_on_value_changed"]
+[connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/SFXSlider" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/SFXSlider" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/SFXSlider" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/SFXSlider" method="_on_mouse_entered"]
+[connection signal="value_changed" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/SFXSlider" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/SFXSlider" method="_on_value_changed"]
+[connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" to="MarginContainer/PanelCRT/VBoxContainer/GridContainer/WindowButton" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CONFIRM" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" to="MarginContainer/PanelCRT/VBoxContainer/HBoxContainer/CANCEL" method="_on_pressed"]

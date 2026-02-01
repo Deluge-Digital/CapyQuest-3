@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://v8lcy1mf4ehw" path="res://assets/UI/Sci-Fi UI.tres" id="1_viu1q"]
 [ext_resource type="StyleBox" uid="uid://5623pnvb133v" path="res://assets/UI/Screen.tres" id="2_nyp0t"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_1v4r6"]
+[ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="3_wcgmo"]
 
 [sub_resource type="Animation" id="Animation_07god"]
 length = 0.001
@@ -99,61 +100,72 @@ theme_override_constants/margin_bottom = 120
 layout_mode = 2
 theme_override_styles/panel = ExtResource("3_1v4r6")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelCRT" unique_id=528049266]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1154890105]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_nyp0t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=528049266]
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="RESULTS" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=594077068]
+[node name="RESULTS" type="Label" parent="MarginContainer/VBoxContainer" unique_id=594077068]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Game Over / Level Completed"
 horizontal_alignment = 1
 
-[node name="MOVECOUNT" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=885776620]
+[node name="MOVECOUNT" type="Label" parent="MarginContainer/VBoxContainer" unique_id=885776620]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Total Moves #"
 horizontal_alignment = 1
 
-[node name="SCORELABEL" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=1713366755]
+[node name="SCORELABEL" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1713366755]
 layout_mode = 2
 text = "(New High) Score"
 horizontal_alignment = 1
 
-[node name="SCORE" type="Label" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=210762170]
+[node name="SCORE" type="Label" parent="MarginContainer/VBoxContainer" unique_id=210762170]
 layout_mode = 2
 text = "⭐⭐⭐"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelCRT/VBoxContainer" unique_id=515542317]
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=515542317]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="RETRY" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1452438356]
+[node name="RETRY" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1452438356]
 layout_mode = 2
 text = "Retry"
+script = ExtResource("3_wcgmo")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
-[node name="TITLE" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1490097815]
+[node name="TITLE" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1490097815]
 layout_mode = 2
 text = "Back to Title (Are you sure?)"
+script = ExtResource("3_wcgmo")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
-[node name="CONTINUE" type="Button" parent="MarginContainer/PanelCRT/VBoxContainer/VBoxContainer" unique_id=1806373377]
+[node name="CONTINUE" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer" unique_id=1806373377]
 layout_mode = 2
 text = "Continue"
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1154890105]
-layout_mode = 2
-theme_override_styles/panel = ExtResource("2_nyp0t")
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer" unique_id=1084505603]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 30
-theme_override_constants/v_separation = 30
-columns = 4
+script = ExtResource("3_wcgmo")
+onHover = "uid://crwtq3dg71mj3"
+onSelect = "uid://cs0w25g1ridyl"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1022213772]
 libraries/ = SubResource("AnimationLibrary_07god")
+
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/VBoxContainer/RETRY" to="MarginContainer/VBoxContainer/VBoxContainer/RETRY" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/RETRY" to="MarginContainer/VBoxContainer/VBoxContainer/RETRY" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/RETRY" to="MarginContainer/VBoxContainer/VBoxContainer/RETRY" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/VBoxContainer/TITLE" to="MarginContainer/VBoxContainer/VBoxContainer/TITLE" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/TITLE" to="MarginContainer/VBoxContainer/VBoxContainer/TITLE" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TITLE" to="MarginContainer/VBoxContainer/VBoxContainer/TITLE" method="_on_pressed"]
+[connection signal="focus_entered" from="MarginContainer/VBoxContainer/VBoxContainer/CONTINUE" to="MarginContainer/VBoxContainer/VBoxContainer/CONTINUE" method="_on_focus_entered"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/CONTINUE" to="MarginContainer/VBoxContainer/VBoxContainer/CONTINUE" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/CONTINUE" to="MarginContainer/VBoxContainer/VBoxContainer/CONTINUE" method="_on_pressed"]
