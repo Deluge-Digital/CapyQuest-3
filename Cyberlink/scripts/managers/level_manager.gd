@@ -13,6 +13,8 @@ var state_machine : StateMachine
 @export var camera : CameraControl
 @export var levels_dir := "res://scenes/levels"
 
+#var level_floor_grid = [][]
+
 var move_inputs : Dictionary = {
 	"ui_up" : false,
 	"ui_down" : false,
@@ -54,7 +56,9 @@ func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:
 		print("Invalid state to ready level. Currently in ", state_machine.current_state)
 		return
-		
+	_load_level(level_number)
+
+func _load_level(level_number : int) -> void:
 	var path : String = "res://scenes/levels/level_%02d.tscn" % level_number
 	
 	if !ResourceLoader.exists(path):
@@ -64,3 +68,5 @@ func _ready_level(level_number : int) -> void:
 	var new_level : PackedScene = load(path)
 	var new_level_instance : Node = new_level.instantiate()
 	add_child(new_level_instance)
+	
+	
