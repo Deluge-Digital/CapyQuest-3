@@ -2,22 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ceulqakrsns8h" path="res://scripts/managers/game_manager.gd" id="1_glms7"]
 [ext_resource type="Script" uid="uid://bj6bhnbd5bm0o" path="res://scripts/managers/level_manager.gd" id="2_oo155"]
+[ext_resource type="PackedScene" uid="uid://dnu6tlcyuflnw" path="res://scenes/ui/background.tscn" id="2_ternb"]
 [ext_resource type="Script" uid="uid://mj651yhan7n4" path="res://scripts/ui/pop_ups/popup_queue.gd" id="2_udu3i"]
 [ext_resource type="Script" uid="uid://cv8t3c0ryu0k8" path="res://scripts/systems/camera_control.gd" id="3_eaq8r"]
 [ext_resource type="PackedScene" uid="uid://cxut7p7twsnes" path="res://scenes/ui/pop_ups/blocker.tscn" id="4_oo155"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eaq8r"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_ternb"]
-sky_material = SubResource("ProceduralSkyMaterial_eaq8r")
-
-[sub_resource type="Environment" id="Environment_q8mjp"]
-background_mode = 2
-sky = SubResource("Sky_ternb")
-tonemap_mode = 2
-glow_enabled = true
 
 [node name="GameManager" type="Control" unique_id=1981080538 node_paths=PackedStringArray("camera", "scene_root", "popup_queue", "level_manager", "blocker")]
 layout_mode = 3
@@ -27,23 +15,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_glms7")
-camera = NodePath("Camera3D")
+camera = NodePath("SubViewportContainer/SubViewport/Camera3D")
 scene_root = NodePath("SceneRoot")
 popup_queue = NodePath("PopupQueue")
-level_manager = NodePath("LevelManager")
+level_manager = NodePath("SubViewportContainer/SubViewport/LevelManager")
 blocker = NodePath("PopupQueue/Blocker")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1418462508]
-environment = SubResource("Environment_q8mjp")
+[node name="Background" parent="." unique_id=742140058 instance=ExtResource("2_ternb")]
+layout_mode = 1
 
-[node name="LevelManager" type="Node3D" parent="." unique_id=1640850077 node_paths=PackedStringArray("camera")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1250369193]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=305972526]
+transparent_bg = true
+size = Vector2i(1152, 648)
+
+[node name="LevelManager" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1640850077 node_paths=PackedStringArray("camera")]
 script = ExtResource("2_oo155")
 camera = NodePath("../Camera3D")
 levels_dir = null
 rat_node_path = null
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=21155025]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=21155025]
 current = true
 script = ExtResource("3_eaq8r")
 
@@ -70,4 +69,3 @@ _blocker = NodePath("Blocker")
 [node name="Blocker" parent="PopupQueue" unique_id=861369603 instance=ExtResource("4_oo155")]
 top_level = true
 layout_mode = 1
-mouse_filter = 2
