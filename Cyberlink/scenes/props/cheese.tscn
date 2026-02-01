@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://ckvgyde8q2tvv"]
+
+[ext_resource type="PackedScene" uid="uid://b6o4or4oblio1" path="res://assets/models/Cheese.glb" id="1_t0i6w"]
+[ext_resource type="Script" uid="uid://dhu0qbvp8f2xf" path="res://scripts/props/cheese.gd" id="1_tpfae"]
+[ext_resource type="AudioStream" uid="uid://d0jm62apsprr8" path="res://assets/audio/sfx/gameplay/victory_option1.wav" id="3_tpfae"]
+
+[sub_resource type="Animation" id="Animation_tpfae"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.1588521, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3b8y1"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.1588521, 0), Vector3(0, 1.659, 0), Vector3(0, 1.1588521, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sjgra"]
+_data = {
+&"RESET": SubResource("Animation_tpfae"),
+&"idle": SubResource("Animation_3b8y1")
+}
+
+[node name="Cheese" type="Node3D" unique_id=1751089781]
+script = ExtResource("1_tpfae")
+
+[node name="Cheese2" parent="." unique_id=474458723 instance=ExtResource("1_t0i6w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 1.1588521, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cheese2" unique_id=867476472]
+libraries/ = SubResource("AnimationLibrary_sjgra")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1159041769]
+stream = ExtResource("3_tpfae")
