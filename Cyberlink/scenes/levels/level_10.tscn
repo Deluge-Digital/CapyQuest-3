@@ -241,7 +241,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 12)
 
 [node name="Ground75" parent="." unique_id=2060518309 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 20)
-tile_color = 2
 
 [node name="Ground76" parent="." unique_id=576578837 instance=ExtResource("2_qblg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 28)
@@ -551,9 +550,12 @@ tile_color = 2
 
 [node name="Gate" parent="." unique_id=1942757170 instance=ExtResource("7_hh2oi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 12)
+tile_color = 4
 
 [node name="Gate2" parent="." unique_id=577240801 instance=ExtResource("7_hh2oi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+tile_color = 1
 
 [node name="Gate3" parent="." unique_id=1152587694 instance=ExtResource("7_hh2oi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 28)
+tile_color = 2
