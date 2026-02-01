@@ -16,10 +16,10 @@ var state_machine : StateMachine
 
 var active_rat : Rat
 var move_inputs : Dictionary = {
-	"ui_up" : false,
-	"ui_down" : false,
-	"ui_left" : false,
-	"ui_right" : false
+	"up" : false,
+	"down" : false,
+	"left" : false,
+	"right" : false
 }
 
 enum cam_dir {
@@ -29,6 +29,7 @@ enum cam_dir {
 	NEGZ
 }
 
+var rat_cam_mode : bool = true
 var active_cam_dir : cam_dir = cam_dir.POSX
 
 func _ready() -> void:
@@ -58,8 +59,33 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed(each) && state_machine.current_state == waiting_state:
 			if state_machine.transition_to(move_state):
 				active_rat._request_movement(each, active_cam_dir)
-				await get_tree().process_frame
-				camera._look_at_rat(active_cam_dir as int)
+				await get_tree().physics_frame
+				await get_tree().physics_frame
+				_update_camera()
+	if event.is_action_pressed("camera_turn_left"):
+		match active_cam_dir:
+			cam_dir.POSX: active_cam_dir = cam_dir.POSZ
+			cam_dir.POSZ: active_cam_dir = cam_dir.NEGX
+			cam_dir.NEGX: active_cam_dir = cam_dir.NEGZ
+			cam_dir.NEGZ: active_cam_dir = cam_dir.POSX
+		_update_camera()
+	if event.is_action_pressed("camera_turn_right"):
+		match active_cam_dir:
+			cam_dir.POSX: active_cam_dir = cam_dir.NEGZ
+			cam_dir.POSZ: active_cam_dir = cam_dir.POSX
+			cam_dir.NEGX: active_cam_dir = cam_dir.POSZ
+			cam_dir.NEGZ: active_cam_dir = cam_dir.NEGX
+		_update_camera()
+	if event.is_action_pressed("camera_mode"):
+		rat_cam_mode = !rat_cam_mode
+		_update_camera()
+		
+func _update_camera() -> void:
+	if rat_cam_mode:
+		camera._look_at_rat(active_cam_dir as int)
+	else:
+		camera._turn_level_camera(active_cam_dir as int)
+	
 
 func _ready_level(level_number : int) -> void:
 	if state_machine.current_state != menu_state:

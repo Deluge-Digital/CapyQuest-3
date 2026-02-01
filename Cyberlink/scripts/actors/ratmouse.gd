@@ -11,6 +11,7 @@ enum rat_dir {
 var rat_direction : rat_dir = rat_dir.NEGX
 var state_machine : StateMachine
 var animation_tween: Tween
+var is_moving : bool = false
 
 @export var sword_front : RayCast3D
 @export var sword_right : RayCast3D
@@ -40,29 +41,31 @@ func detect_left() -> Node:
 	return null
 	
 func _request_movement(event : String, cam_dir : int) -> void:
+	if is_moving:
+		return
 	match event:
-		"ui_up":
+		"up":
 			match cam_dir:
 				0 : rat_direction = rat_dir.POSX
 				1 : rat_direction = rat_dir.POSZ
 				2 : rat_direction = rat_dir.NEGX
 				3 : rat_direction = rat_dir.NEGZ
 				_ : return
-		"ui_down":
+		"down":
 			match cam_dir:
 				0 : rat_direction = rat_dir.NEGX
 				1 : rat_direction = rat_dir.NEGZ
 				2 : rat_direction = rat_dir.POSX
 				3 : rat_direction = rat_dir.POSZ
 				_ : return
-		"ui_left":
+		"left":
 			match cam_dir:
 				0 : rat_direction = rat_dir.NEGZ
 				1 : rat_direction = rat_dir.POSX
 				2 : rat_direction = rat_dir.POSZ
 				3 : rat_direction = rat_dir.NEGX
 				_ : return
-		"ui_right":
+		"right":
 			match cam_dir:
 				0 : rat_direction = rat_dir.POSZ
 				1 : rat_direction = rat_dir.NEGX
@@ -75,14 +78,16 @@ func _request_movement(event : String, cam_dir : int) -> void:
 	
 func _update_rat_direction() -> void:
 	rotation_degrees.y = (rat_direction * -90.0) + 180
-	await get_tree().process_frame
+	await get_tree().physics_frame
 	_move_forward()
 
 func _move_forward() -> void:
+	is_moving = true
 	if animation_tween && animation_tween.is_running():
 		animation_tween.kill()
 	rat_sprite.global_position = global_position
 	animator.stop()
+	await get_tree().physics_frame
 	
 	if detect_front() is Ground:
 		
@@ -96,5 +101,6 @@ func _move_forward() -> void:
 		animator.play("Walk")
 		
 	await get_tree().process_frame
+	is_moving = false
 	var parent : LevelManager = get_parent().get_parent()
 	parent.request_waiting_state()
