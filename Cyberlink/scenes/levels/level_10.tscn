@@ -556,12 +556,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 52)
 
 [node name="Keycard" parent="." unique_id=809400010 instance=ExtResource("7_5db3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, 36)
+tile_color = 1
 
 [node name="Keycard2" parent="." unique_id=1391412373 instance=ExtResource("7_5db3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76, 0, 76)
+tile_color = 4
 
 [node name="Keycard3" parent="." unique_id=1217562536 instance=ExtResource("7_5db3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 68)
+tile_color = 2
 
 [node name="Locked Door" type="Node3D" parent="." unique_id=70839500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44, 3.2, 28)
