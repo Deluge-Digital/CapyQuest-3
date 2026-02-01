@@ -93,14 +93,17 @@ func _move_forward() -> void:
 	var dead : bool = false
 	
 	if front_node is Ground:
-		var target_pos = sword_front.global_position - Vector3(0,9,0)
-		global_position = target_pos
-		rat_sprite.global_position = sword_back.global_position - Vector3(0,9,0)
-		
-		animation_tween = get_tree().create_tween()
-		animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-		
-		animator.play("Walk")
+		if PlayerData.get_player_color() & front_node.get_color():
+			front_node = null
+		if front_node:
+			var target_pos = sword_front.global_position - Vector3(0,9,0)
+			global_position = target_pos
+			rat_sprite.global_position = sword_back.global_position - Vector3(0,9,0)
+			
+			animation_tween = get_tree().create_tween()
+			animation_tween.tween_property(rat_sprite,"global_position",target_pos,1.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+			
+			animator.play("Walk")
 	if front_node is Wall:
 		if PlayerData.get_player_color() & front_node.get_color():
 			var target_pos = sword_front.global_position - Vector3(0,9,0)

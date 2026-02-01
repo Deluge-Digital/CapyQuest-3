@@ -70,18 +70,19 @@ func _input(event: InputEvent) -> void:
 		_turn_camera_right()
 	if event.is_action_pressed("camera_mode"):
 		_change_rat_cam()
-	if event.is_action_pressed("equip_red"):
-		if PlayerData.get_mask_inventory() & color_enum.TileColor.RED:
-			PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.RED) as color_enum.TileColor
-			GameManager._update_color()
-	if event.is_action_pressed("equip_green"):
-		if PlayerData.get_mask_inventory() & color_enum.TileColor.GREEN:
-			PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.GREEN) as color_enum.TileColor
-			GameManager._update_color()
-	if event.is_action_pressed("equip_blue"):
-		if PlayerData.get_mask_inventory() & color_enum.TileColor.BLUE:
-			PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.BLUE) as color_enum.TileColor
-			GameManager._update_color()
+	if state_machine.current_state == waiting_state:
+		if event.is_action_pressed("equip_red"):
+			if PlayerData.get_mask_inventory() & color_enum.TileColor.RED:
+				PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.RED) as color_enum.TileColor
+				GameManager._update_color()
+		if event.is_action_pressed("equip_green"):
+			if PlayerData.get_mask_inventory() & color_enum.TileColor.GREEN:
+				PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.GREEN) as color_enum.TileColor
+				GameManager._update_color()
+		if event.is_action_pressed("equip_blue"):
+			if PlayerData.get_mask_inventory() & color_enum.TileColor.BLUE:
+				PlayerData.player_color = (PlayerData.player_color ^ color_enum.TileColor.BLUE) as color_enum.TileColor
+				GameManager._update_color()
 
 func _refresh_level() -> void:
 	if current_level_node:
