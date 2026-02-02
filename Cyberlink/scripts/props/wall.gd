@@ -1,7 +1,7 @@
 extends BaseProp
 class_name Wall
 
-@onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var mesh_instance_3d: MeshInstance3D = $Block/Wall
 
 
 func set_color():

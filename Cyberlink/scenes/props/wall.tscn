@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfrpax2v0ay0y"]
 
 [ext_resource type="Script" uid="uid://bkexajysrkj77" path="res://scripts/props/wall.gd" id="1_viio0"]
-[ext_resource type="PackedScene" uid="uid://bgbeb1fq2wdda" path="res://assets/models/Block.glb" id="2_e6dnx"]
+[ext_resource type="PackedScene" uid="uid://cdr81qo1pwrfr" path="res://scenes/props/block.tscn" id="2_e6dnx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e6dnx"]
 size = Vector3(8, 8, 8)
@@ -9,8 +9,8 @@ size = Vector3(8, 8, 8)
 [node name="Wall" type="Area3D" unique_id=1563279206]
 script = ExtResource("1_viio0")
 
-[node name="Block" parent="." unique_id=397946409 instance=ExtResource("2_e6dnx")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1830173518]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 shape = SubResource("BoxShape3D_e6dnx")
+
+[node name="Block" parent="." unique_id=1725926130 instance=ExtResource("2_e6dnx")]
