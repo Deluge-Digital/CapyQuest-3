@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://b3wg45gner2y3"]
 
-[ext_resource type="PackedScene" uid="uid://orwknnpglshr" path="res://assets/models/Keycard.glb" id="1_q0tfa"]
+[ext_resource type="PackedScene" uid="uid://bti3nwe1o6kgl" path="res://assets/models/Keycard.glb" id="1_q0tfa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ckf7i"]
 resource_name = "Keycard"
@@ -54,7 +54,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_roiuv"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_q0tfa"]
 resource_local_to_scene = true
 resource_name = "Keycard_Card"
 _surfaces = [{
@@ -99,5 +99,5 @@ shadow_mesh = SubResource("ArrayMesh_uq8ih")
 
 [node name="Keycard2" unique_id=1178490402 instance=ExtResource("1_q0tfa")]
 
-[node name="Keycard" parent="." index="0" unique_id=1480450683]
-mesh = SubResource("ArrayMesh_roiuv")
+[node name="Keycard" parent="." index="0" unique_id=1376927235]
+mesh = SubResource("ArrayMesh_q0tfa")

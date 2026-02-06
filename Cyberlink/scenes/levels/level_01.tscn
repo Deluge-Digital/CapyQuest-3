@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cxyk0cvaas46b" path="res://scenes/props/ground.tscn" id="2_6761a"]
 [ext_resource type="PackedScene" uid="uid://dfrpax2v0ay0y" path="res://scenes/props/wall.tscn" id="3_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://bv42j4gv2u27" path="res://scenes/props/spawn_marker.tscn" id="4_50wog"]
-[ext_resource type="PackedScene" path="res://scenes/props/goal.tscn" id="5_oc4kc"]
+[ext_resource type="PackedScene" uid="uid://di32k730cymri" path="res://scenes/props/goal.tscn" id="5_oc4kc"]
 
 [node name="Level01" type="Node3D" unique_id=853865969]
 script = ExtResource("1_qdh5e")

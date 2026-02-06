@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cdr81qo1pwrfr"]
 
-[ext_resource type="PackedScene" uid="uid://cinla2nrlajum" path="res://assets/models/Block.glb" id="1_f25kf"]
+[ext_resource type="PackedScene" uid="uid://c5dc0ox6mhpny" path="res://assets/models/Block.glb" id="1_f25kf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7x5n"]
 resource_name = "Walls"
@@ -23,7 +23,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_twce6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_f25kf"]
 resource_local_to_scene = true
 resource_name = "Block_Wall"
 _surfaces = [{
@@ -44,5 +44,5 @@ shadow_mesh = SubResource("ArrayMesh_ixsv5")
 
 [node name="Block" unique_id=1725926130 instance=ExtResource("1_f25kf")]
 
-[node name="Wall" parent="." index="0" unique_id=1506261535]
-mesh = SubResource("ArrayMesh_twce6")
+[node name="Wall" parent="." index="0" unique_id=138312124]
+mesh = SubResource("ArrayMesh_f25kf")

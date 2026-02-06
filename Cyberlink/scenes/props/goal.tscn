@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b6o4or4oblio1" path="res://assets/models/Cheese.glb" id="1_t0i6w"]
 [ext_resource type="Script" uid="uid://dhu0qbvp8f2xf" path="res://scripts/props/cheese.gd" id="1_tpfae"]
-[ext_resource type="AudioStream" uid="uid://ci60stdyi3y85" path="res://assets/audio/sfx/gameplay/victory_option1.wav" id="3_tpfae"]
+[ext_resource type="AudioStream" uid="uid://bmhoy5vqqorf6" path="res://assets/audio/sfx/gameplay/victory_option1.wav" id="3_tpfae"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n6pa6"]
 size = Vector3(8, 8, 8)

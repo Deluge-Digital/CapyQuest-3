@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dvdfqpq4auqvc"]
 
-[ext_resource type="PackedScene" uid="uid://cnacfkwnjc8if" path="res://assets/models/Glasses.glb" id="1_mufww"]
+[ext_resource type="PackedScene" uid="uid://bwg48530yr2ql" path="res://assets/models/Glasses.glb" id="1_mufww"]
 
 [sub_resource type="GDScript" id="GDScript_mufww"]
 
@@ -74,5 +74,5 @@ shadow_mesh = SubResource("ArrayMesh_s0c3a")
 [node name="Glasses2" unique_id=1979334778 instance=ExtResource("1_mufww")]
 script = SubResource("GDScript_mufww")
 
-[node name="Glasses" parent="." index="0" unique_id=123324654]
+[node name="Glasses" parent="." index="0" unique_id=1193018794]
 mesh = SubResource("ArrayMesh_mufww")

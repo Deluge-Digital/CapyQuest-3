@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dxvwrs8d3phen" path="res://scripts/ui/pop_ups/settings.gd" id="2_sgdtv"]
 [ext_resource type="StyleBox" uid="uid://difkpi1r47tti" path="res://assets/UI/BG_CRT.tres" id="3_cpyqp"]
 [ext_resource type="Script" uid="uid://cgmo0gsyv76v5" path="res://scripts/ui/buttons.gd" id="4_cpyqp"]
-[ext_resource type="Script" path="res://scripts/ui/sliders.gd" id="4_sgdtv"]
+[ext_resource type="Script" uid="uid://b6tlbuvybul3o" path="res://scripts/ui/sliders.gd" id="4_sgdtv"]
 
 [sub_resource type="Animation" id="Animation_fnfel"]
 length = 0.001

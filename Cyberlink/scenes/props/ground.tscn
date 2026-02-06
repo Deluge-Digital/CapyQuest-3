@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cxyk0cvaas46b"]
 
 [ext_resource type="Script" uid="uid://cbxsykoebuucj" path="res://scripts/props/ground.gd" id="1_swbi6"]
-[ext_resource type="PackedScene" uid="uid://df0dftuioocth" path="res://assets/models/Floor.glb" id="2_rwexe"]
+[ext_resource type="PackedScene" uid="uid://dxhdtrg7ykft" path="res://assets/models/Floor.glb" id="2_rwexe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_swbi6"]
 size = Vector3(8, 8, 8)

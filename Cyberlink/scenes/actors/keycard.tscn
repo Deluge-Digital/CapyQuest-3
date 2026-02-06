@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyp6ao05obu7e"]
 
-[ext_resource type="PackedScene" uid="uid://orwknnpglshr" path="res://assets/models/Keycard.glb" id="1_arvw2"]
+[ext_resource type="PackedScene" uid="uid://bti3nwe1o6kgl" path="res://assets/models/Keycard.glb" id="1_arvw2"]
 [ext_resource type="Script" uid="uid://d3vwerw886wft" path="res://scenes/actors/keycard.gd" id="1_cbcvk"]
 [ext_resource type="PackedScene" uid="uid://b3wg45gner2y3" path="res://scenes/props/keycard_inherited.tscn" id="3_0rgng"]
 
