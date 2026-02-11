@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cs0w25g1ridyl"
+path="res://.godot/imported/Button Confirm.wav-17ae26f9a7a7274c47d5e0965e29280a.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ui_sfx/Button Confirm.wav"
+dest_files=["res://.godot/imported/Button Confirm.wav-17ae26f9a7a7274c47d5e0965e29280a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
