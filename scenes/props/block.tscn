@@ -6,7 +6,7 @@
 resource_name = "Walls"
 transparency = 4
 cull_mode = 2
-albedo_color = Color(0, 0, 0, 0.5)
+albedo_color = Color(0, 0, 0, 0.5019608)
 roughness = 0.33
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ixsv5"]
@@ -44,5 +44,5 @@ shadow_mesh = SubResource("ArrayMesh_ixsv5")
 
 [node name="Block" unique_id=1725926130 instance=ExtResource("1_f25kf")]
 
-[node name="Wall" parent="." index="0" unique_id=138312124]
+[node name="Wall" parent="." index="0" unique_id=1805451086]
 mesh = SubResource("ArrayMesh_f25kf")
